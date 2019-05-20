@@ -1,0 +1,15 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/*  */
+@import "components.pcss";
+@import "elements.pcss";
+@import "grid.pcss";
+@import "images.pcss";
+@import "fonts.pcss";
+@import "swiper.pcss";
+@import "footer.pcss";
+@import "animations.pcss";
+@import "nav.pcss";
+@import "opening.pcss";
+@import "cross.pcss";

@@ -1,0 +1,39 @@
+.scroll-size-left {
+  width: 58.33333%;
+  margin-right: 0;
+  transition: margin 800ms ease-out, width 800ms ease-out;
+
+  &.active {
+    width: 50%;
+    margin-right: 8.33333%
+  }
+}
+
+.scroll-size-right {
+  .figure-p-lg:after {
+    transition: padding 800ms ease-out;
+  }
+  &.active {
+    .figure-p-lg:after {
+      padding-top: 100%;
+    }
+  }
+}
+
+.scroll-color {
+  @apply bg-grey-light;
+  transition: background-color 800ms ease;
+
+  &.active {
+    @apply bg-white;
+  }
+}
+
+.scroll-out {
+  opacity: 1;
+  transition: opacity 800ms ease;
+  
+  &.active {
+    opacity: 0;
+  }
+}

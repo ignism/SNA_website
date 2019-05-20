@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="section swiper-section" data-effect="slide">
+
+    <div class="row">
+      <div class="col w-full">
+        <div class="swiper-container">
+
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <figure class="figure-l bg-black"></figure>
+            </div>
+
+            <div class="swiper-slide">
+              <figure class="figure-l bg-red"></figure>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mt-2">
+            <div class="swiper-count">1/2</div>
+            <div class="flex">
+              <div class="swiper-prev mr-2">
+                {% include "components/arrow.html.twig" with {
+                  direction : "left",
+                  color: "grey"
+                } %}
+              </div>
+              <div class="swiper-next ml-2">
+                {% include "components/arrow.html.twig" with {
+                  direction : "right",
+                  color: "grey"
+                } %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col w-5/12">
+        <div class="w-full">
+
+          {% if link %}
+            <div class="mt-24 text-xl text-red flex justify-end items-center">
+              <div class="mr-4">{{ link }}</div>{% include "components/cross.html.twig" %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

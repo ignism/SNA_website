@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="section swiper-section" data-effect="fade">
+    <div class="relative">
+      <div class="row mb-10">
+        <div class="col w-full flex justify-start">
+          <div class="text-xl text-black">News feed</div>
+        </div>
+      </div>
+
+      <div class="swiper-container">
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="w-full">
+              <div class="row flex-no-wrap">
+                <div class="col w-6/12">
+                  <figure class="figure-p-lg bg-black"></figure>
+                </div>
+                <div class="col w-5/12 ml-1/12">
+                  <div class="flex justify-between text-lg pb-10">
+                    <div>17-02-2007</div>
+                    <div>Dutch Design Week</div>
+                  </div>
+                  <p class="text-black">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis mollitia ex nulla laboriosam error animi ad totam veniam doloremque architecto ab, labore possimus id, fugit quos tempora quod iusto ut.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="w-5/12 ml-7/12 absolute pin-b flex z-10">
+          <div class="swiper-prev mr-2">
+            {% include "components/arrow.html.twig" with {
+              direction : "left",
+              color: "grey"
+            } %}
+          </div>
+          <div class="swiper-next ml-2">
+            {% include "components/arrow.html.twig" with {
+              direction : "right",
+              color: "grey"
+            } %}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="go-to-top">
+        <a href="#" class="flex items-center">
+          <div class="text-lg text-grey mr-4">
+            Go to top
+          </div>
+          {% include "components/arrow.html.twig" with {
+            direction: "up",
+            color: "grey"
+          } %}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

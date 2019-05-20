@@ -1,0 +1,26 @@
+$section-space: 10;
+$column-space: 4;
+$gutter: gutter;
+$offset: 10;
+/*  */
+.container {
+  @apply max-w-5xl mx-auto px-#{$offset};
+}
+
+.section {
+  @apply py-#{$section-space};
+}
+
+.row {
+  @apply flex flex-wrap -mx-#{$gutter};
+  &.flex-no-wrap {
+    @apply flex-no-wrap;
+  }
+}
+
+.col {
+  @apply px-#{$gutter};
+  &-content {
+    @apply p-#{$column-space};
+  }
+}

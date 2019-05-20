@@ -1,0 +1,25 @@
+{# About template #}
+
+{% extends "core/base.html.twig" %}
+
+{% block main %}
+
+  {% include "layout/header.html.twig" %}
+
+  {% include "layout/swiper-text.html.twig" with { 
+    link: ''
+  } %}
+
+  {% include "layout/swiper-image.html.twig" with { 
+    link: ''
+  } %}
+
+  <div class="container">
+    <div class="dotted-line"></div>
+  </div>
+
+  {% include "layout/keynote.html.twig" %}
+
+  {% include "layout/double-image.html.twig" %}
+
+{% endblock %}

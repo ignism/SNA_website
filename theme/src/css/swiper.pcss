@@ -1,0 +1,29 @@
+.swiper-custom-pagination {
+  .pagination-item {
+    cursor: pointer;
+    &.active {
+      @apply text-red;
+    }
+  }
+}
+
+.pagination-item.crumb {
+  @apply text-center;
+  
+  &:first-child {
+    @apply -ml-3;
+  }
+
+  &:last-child {
+    @apply -mr-3;
+  }
+
+  .indicator {
+    @apply w-2 h-2 mx-3 my-3 bg-grey rounded-full;
+    transition: 200ms ease-in;
+  }
+
+  &.active .indicator {
+    @apply w-4 h-4 mx-2 my-2 bg-red;
+  }
+}

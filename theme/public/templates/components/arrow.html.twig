@@ -1,0 +1,99 @@
+{% if color == "" %}
+  {% set color = "red" %}
+{% endif %}
+
+{% if size == "" %}
+  {% set size = "sm" %}
+{% endif %}
+
+{% if direction == "left" %}
+  {% set rotation = "180deg" %}
+{% elseif direction == "up" %}
+  {% set rotation = "-90deg" %}
+{% elseif direction == "down" %}
+  {% set rotation = "90deg" %}
+{% else %}
+  {% set rotation = "0deg" %}
+{% endif %}
+
+<div class="arrow-{{ size }}" style="transform: rotate({{ rotation }})">
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row flex flex-wrap">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arrow-row">
+    <div class="arrow-dot">
+      <div class="absolute pin">
+        <img src="{{ theme.link }}/images/dot-{{ color }}.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

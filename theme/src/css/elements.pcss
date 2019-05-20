@@ -1,0 +1,29 @@
+body,
+html {
+  @apply text-grey bg-white;
+  font-family: 'Aeonik', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+a,
+a:active,
+a:focus,
+a:visited {
+  @apply text-black no-underline;
+  transition: 200ms ease-out;
+}
+
+a:hover {
+  
+}
+
+quote {
+  &:before {
+    content: '\201C';
+  } 
+  
+  &:after {
+    content: '\201D';
+  }
+}

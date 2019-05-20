@@ -1,0 +1,130 @@
+.button,
+button {
+  color: inherit;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.dotted-line {
+  background-image: url('../images/border.svg');
+  height: 2px;
+  width: 100%;
+}
+
+.go-to-top {
+  @apply absolute pin-b w-full text-right;
+  a {
+    @apply absolute pin-b pin-r z-10;
+  }
+}
+
+.dot-red,
+.dot-white {
+  @apply relative ml-6;
+  &::before {
+    @apply absolute pin-l pin-t -ml-6 border-2 rounded-full bg-transparent;
+    content: '';
+    width: 18px;
+    height: 18px;
+    margin-top: 5.5px;
+    transition: 200ms ease-in-out;
+  }
+}
+
+.dot-red {
+  &::before {
+    @apply border-red;
+  }
+  &.active::before {
+    @apply bg-red;
+  }
+}
+
+.dot-white {
+  &::before {
+    @apply border-white;
+  }
+  &.active::before {
+    @apply bg-white;
+  }
+}
+
+.arrow-sm {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  .arrow-row {
+    margin-bottom: 3px;
+  }
+  .arrow-dot {
+    position: relative;
+    width: 3px;
+    padding-top: 3px;
+    transition: margin 200ms ease-out;
+    img {
+      position: absolute;
+    }
+  }
+  .arrow-dot:not(:first-child) {
+    margin-left: 3px;
+  }
+  .arrow-row:nth-child(1),
+  .arrow-row:nth-child(7) {
+    .arrow-dot {
+      margin-left: 18.5px;
+    }
+  }
+  .arrow-row:nth-child(2),
+  .arrow-row:nth-child(6) {
+    .arrow-dot {
+      margin-left: 62.82167%;
+    }
+  }
+  .arrow-row:nth-child(3),
+  .arrow-row:nth-child(5) {
+    .arrow-dot {
+      margin-left: 79.48834%;
+    }
+  }
+}
+
+.arrow-lg {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  .arrow-row {
+    margin-bottom: 5px;
+  }
+  .arrow-dot {
+    position: relative;
+    width: 5px;
+    padding-top: 5px;
+    transition: margin 200ms ease-out;
+    img {
+      position: absolute;
+    }
+  }
+  .arrow-dot:not(:first-child) {
+    margin-left: 5px;
+  }
+  .arrow-row:nth-child(1),
+  .arrow-row:nth-child(7) {
+    .arrow-dot {
+      margin-left: 30px;
+    }
+  }
+  .arrow-row:nth-child(2),
+  .arrow-row:nth-child(6) {
+    .arrow-dot {
+      margin-left: 62.82167%;
+    }
+  }
+  .arrow-row:nth-child(3),
+  .arrow-row:nth-child(5) {
+    .arrow-dot {
+      margin-left: 79.48834%;
+    }
+  }
+}

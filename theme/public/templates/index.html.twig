@@ -1,0 +1,44 @@
+{# Landing template #}
+
+{% extends "core/base.html.twig" %}
+
+{% set body_class = ['scroll-color'] %}
+
+{% block header %}
+    <div class="fixed w-full h-32 z-40">
+      <div class="container">
+        <nav class="nav pt-10 pb-2">
+          <div class="row justify-between items-end">
+            <div class="col">
+              <h2>
+                <span class="logo">
+                  Suna.
+                </span>
+                <span class="scroll-out">
+                  is a production house for innovative events focusing specifically on the field of culture, knowledge, art and design.
+                </span>
+              </h2>
+            </div>
+            <ul class="nav-items col flex list-reset text-lg text-red">
+              <li class="nav-item hidden dot-red">About</li>
+              <li class="nav-item hidden dot-red">Portfolio</li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+
+  {% include "layout/header.html.twig" %}
+
+  {% include "layout/swiper-text.html.twig" with {
+    link: 'About us'
+  } %}
+
+  {% include "layout/case-tease.html.twig" %}
+
+  {% include "layout/news-feed.html.twig" %}
+
+{% endblock %}

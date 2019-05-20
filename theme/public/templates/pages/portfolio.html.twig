@@ -1,0 +1,80 @@
+{# Portfolio template #}
+
+{% extends "core/base.html.twig" %}
+
+{% set body_class = ['bg-grey-light'] %}
+
+{% block main %}
+
+  <div class="container">
+    <div class="section swiper-section" data-effect="fade">
+      <div class="relative w-full">
+        <div class="absolute pin z-10">
+          <ul class="swiper-custom-pagination list-reset">
+            <li class="pagination-item active" data-swiper-target="1">
+              <h1 class="text-2xl">Mestic Bio Lab<span class="superscript">01</span></h1>
+            </li>
+            <li class="pagination-item" data-swiper-target="2">
+              <h1 class="text-2xl">STRP Festival<span class="superscript">02</span></h1>
+            </li>
+            <li class="pagination-item" data-swiper-target="3">
+              <h1 class="text-2xl">Dutch Design Week<span class="superscript">03</span></h1>
+            </li>
+            <li class="pagination-item" data-swiper-target="4">
+              <h1 class="text-2xl">Glow Next Eindhoven<span class="superscript">04</span></h1>
+            </li>
+            <li class="pagination-item" data-swiper-target="5">
+              <h1 class="text-2xl">Makers Day<span class="superscript">05</span></h1>
+            </li>
+          </ul>
+        </div>
+        <div class="absolute pin z-0">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <div class="row flex-no-wrap items-end">
+                  <div class="col w-7/12 flex justify-between">
+                    <div class="caption">Fashion Innovation</div>
+                    <div class="caption">2016</div>
+                  </div>
+                  <div class="col w-5/12">
+                    <figure class="figure-p-lg bg-black"></figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="row flex-no-wrap items-end">
+                  <div class="col w-7/12 flex justify-between">
+                    <div class="caption">Lorem Ipsum</div>
+                    <div class="caption">2017</div>
+                  </div>
+                  <div class="col w-5/12">
+                    <figure class="figure-p-lg bg-red"></figure>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="row flex-no-wrap items-end">
+                  <div class="col w-7/12 flex justify-between">
+                    <div class="caption">Sit Dolor</div>
+                    <div class="caption">2018</div>
+                  </div>
+                  <div class="col w-5/12">
+                    <figure class="figure-p-lg bg-grey"></figure>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

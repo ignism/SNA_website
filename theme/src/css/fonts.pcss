@@ -1,0 +1,147 @@
+@define-mixin text-m-lg {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 50px;
+  letter-spacing: -0.6px;
+}
+
+@define-mixin text-m-xl {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 50px;
+  letter-spacing: -0.5px;
+}
+
+@define-mixin text-m-2xl {
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 65px;
+  letter-spacing: -2px;
+}
+
+@define-mixin text-m-3xl {
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 65px;
+  letter-spacing: -2px;
+}
+
+@define-mixin text-lg {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+}
+
+@define-mixin text-xl {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+
+@define-mixin text-2xl {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 55px;
+  letter-spacing: -2px;
+}
+
+@define-mixin text-3xl {
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 51px;
+  letter-spacing: -2px;
+}
+
+.text-3xl, h1 {
+  @mixin text-m-3xl;
+}
+
+.text-2xl {
+  @mixin text-m-2xl;
+}
+
+.text-xl, h2 {
+  @mixin text-m-xl;
+}
+
+.text-lg, p {
+  @mixin text-m-lg;
+}
+
+h1 {
+  position: relative;
+
+  &.title {
+    @apply text-red;
+  }
+  .superscript {
+    position: absolute;
+    top: 0;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+}
+
+p {
+  &:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
+  
+  .highlight {
+    @apply text-red relative ml-6;
+
+    &::before {
+      @apply absolute pin-l pin-t -ml-6 border-red border-2 rounded-full bg-red;
+      content: '';
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.logo {
+  @apply text-red;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.caption {
+  @apply text-black;
+  font-size: 22px;
+  line-height: 1em;
+  letter-spacing: -0.3px;
+}
+
+.indent {
+  text-indent: 1em;
+}
+
+@screen md {
+  .text-3xl, h1 {
+    @mixin text-3xl;
+  }
+
+  .text-2xl {
+    @mixin text-2xl;
+  }
+  
+  .text-xl, h2 {
+    @mixin text-xl;
+  }
+  
+  .text-lg, p {
+    @mixin text-lg;
+  }
+  
+  h1 .superscript {
+    top: 4px;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+  }
+}

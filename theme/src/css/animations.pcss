@@ -1,0 +1,60 @@
+.fade-out {
+  animation: fadeOut 400ms ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 400ms ease-in-out forwards;
+}
+
+.desaturate {
+  filter: saturate(0);
+}
+
+.saturate {
+  filter: saturate(1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.underline-in {
+  @apply relative no-underline;
+}
+
+.underline-in::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #ff5a50;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: underlineIn 400ms ease-in-out forwards;
+}
+
+@keyframes underlineIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+

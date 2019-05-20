@@ -1,0 +1,48 @@
+<div class="bg-grey-light">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col w-7/12 flex flex-col justify-between">
+          <div class="w-full desktop:w-11/12 wide:w-9/12">
+            <h1 class="title">Mestic Bio Lab</h1>
+            <p class="text-3xl indent mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elire.
+            </p>
+            {% include "components/cross.html.twig" with {
+              cross_color : "grey",
+              cross_size: "lg"
+            } %}
+          </div>
+          <div class="flex justify-between">
+            <div class="caption">Fashion Innovation</div>
+            <div class="caption">2019</div>
+          </div>
+        </div>
+        <div class="col w-5/12">
+          <figure class="figure-p-lg bg-grey">
+            <img src="" alt="">
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="dotted-line"></div>
+  </div>
+</div>
+
+{#  #}
+
+<div class="bg-grey-light">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col w-full flex justify-end items-center">
+          <div class="text-xl text-red mr-4">See all cases</div>
+          {% include "components/cross.html.twig" with {
+            cross_color : "red",
+            cross_size: "sm"
+          } %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

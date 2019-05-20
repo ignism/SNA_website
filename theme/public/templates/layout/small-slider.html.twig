@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="section swiper-section" data-effect="fade">
+    <div class="row items-end">
+
+      <div class="col w-7/12 flex justify-between">
+        <div class="flex z-10">
+          <div class="swiper-prev mr-2">
+            {% include "components/arrow.html.twig" with {
+              direction : "left",
+              color: "grey"
+            } %}
+          </div>
+          <div class="swiper-next ml-2">
+            {% include "components/arrow.html.twig" with {
+              direction : "right",
+              color: "grey"
+            } %}
+          </div>
+        </div>
+        <div class="swiper-count">1/4</div>
+      </div>
+
+      <div class="col w-5/12">
+        <div class="w-full">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <figure class="figure-p-lg bg-grey"></figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure class="figure-p-lg bg-red"></figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure class="figure-p-lg bg-black"></figure>
+              </div>
+
+              <div class="swiper-slide">
+                <figure class="figure-p-lg bg-red"></figure>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
