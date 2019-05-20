@@ -11,7 +11,8 @@
     "postinstall": "./node_modules/.bin/tailwind init; cd theme; composer i",
     "serve": "docker-compose up -d",
     "stop": "docker-compose down --volumes",
-    "browser-sync": "browser-sync start --proxy localhost:8080"
+    "browser-sync": "browser-sync start --proxy localhost:8080",
+    "rsync": "rsync -r -v --exclude-from=.rsyncexclude \"$(npx json -f './config/rsync.json' 'source')\" \"$(npx json -f './config/rsync.json' 'target')\""
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +45,7 @@
     "zenscroll": "^4.0.2"
   },
   "dependencies": {
-    "browser-sync": "^2.26.5"
+    "browser-sync": "^2.26.5",
+    "json": "^9.0.6"
   }
 }
