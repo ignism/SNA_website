@@ -1,19 +1,23 @@
 <div class="fixed w-full h-32 z-40">
-    <div class="container">
-      <nav class="nav pt-10 pb-2 border-b-2 border-red">
-        <div class="row justify-between items-end">
-          <div class="col">
-            <h2>
-              <span class="logo">
-                Suna.
-              </span>
-            </h2>
-          </div>
-          <ul class="nav-items col flex list-reset text-lg text-red">
-            <li class="nav-item dot-red">About</li>
-            <li class="nav-item dot-red">Portfolio</li>
-          </ul>
+  <div class="container">
+    <nav class="nav pt-10 pb-2 border-b-2 border-red">
+      <div class="row justify-between items-end">
+        <div class="col">
+          <h2>
+            <a class="text-red" href="{{site.link}}">
+              <span class="logo">Suna.</span>
+            </a>
+          </h2>
         </div>
-      </nav>
-    </div>
+        <ul class="nav-items col flex list-reset text-lg text-red">
+          <li class="nav-item dot-red {% if about_active %}active{% endif %}">
+            <a class="text-red" href="{{ site.link }}/about">About</a>
+          </li>
+          <li class="nav-item dot-red {% if portfolio_active %}active{% endif %}">
+            <a class="text-red" href="{{ site.link }}/portfolio">Portfolio</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
+</div>

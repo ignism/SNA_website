@@ -8,10 +8,12 @@
             <p class="text-3xl indent mb-8">
               Lorem ipsum dolor sit amet, consectetur adipisicing elire.
             </p>
+            <a href="{{ site.link }}/case/mestic-bio-lab/">
             {% include "components/cross.html.twig" with {
               cross_color : "grey",
               cross_size: "lg"
             } %}
+            </a>
           </div>
           <div class="flex justify-between">
             <div class="caption">Fashion Innovation</div>
@@ -20,7 +22,10 @@
         </div>
         <div class="col w-5/12">
           <figure class="figure-p-lg bg-grey">
-            <img src="" alt="">
+            <img class="desaturate" src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
+            <div class="absolute pin overflow-hidden flex justify-start">
+              <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_left_grey_dot_pattern_2.svg" alt="">
+            </div>
           </figure>
         </div>
       </div>

@@ -9,7 +9,7 @@
     "watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "postinstall": "./node_modules/.bin/tailwind init; cd theme; composer i",
-    "serve": "docker-compose up -d",
+    "serve": "docker kill $(docker ps -q); docker-compose up -d",
     "stop": "docker-compose down --volumes",
     "browser-sync": "browser-sync start --proxy localhost:8080",
     "rsync": "rsync -r -v --exclude-from=.rsyncexclude \"$(npx json -f './config/rsync.json' 'source')\" \"$(npx json -f './config/rsync.json' 'target')\""

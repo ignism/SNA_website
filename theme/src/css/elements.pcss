@@ -14,9 +14,13 @@ a:visited {
   transition: 200ms ease-out;
 }
 
-a:hover {
-  
+a.text-red,
+a.text-red:active,
+a.text-red:focus,
+a.text-red:visited {
+  @apply text-red;
 }
+
 
 quote {
   &:before {
