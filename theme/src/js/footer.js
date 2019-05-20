@@ -13,6 +13,12 @@ window.onscroll = (event) => {
     } else {
       toggle.classList.remove('active')
     }
+  } else {
+    if (window.scrollY > getDocumentHeight() - window.innerHeight - 300) {
+      footer.classList.remove('active')
+      toggle.classList.remove('active')
+      footer.style = 'fixed'
+    }
   }
 }
 

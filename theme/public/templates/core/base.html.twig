@@ -35,6 +35,10 @@
       </div>
     {% endblock %}
 
+    {% block tablet %}
+    <div class="fixed pin z-50 w-full h-screen bg-red desktop:hidden"></div>
+    {% endblock %}
+
     {% block header %}
       {% include "core/nav.html.twig" %}
     {% endblock %}

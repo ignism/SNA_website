@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let pagination = swiper.querySelector('.swiper-custom-pagination')
     if (pagination) {
       let items = Array.from(pagination.querySelectorAll('.pagination-item'))
+      
+      instance.on('slideChangeTransitionStart', () => {
+        console.log(instance.realIndex + 1)
+        items.forEach((item) => {
+          item.classList.remove('active')
+          if (parseInt(item.getAttribute('data-swiper-target')) == parseInt(instance.realIndex + 1)) {
+            item.classList.add('active')
+          }
+        })
+      })
 
       items.forEach((item) => {
         let target = item.getAttribute('data-swiper-target')
@@ -45,7 +55,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             items.forEach((_item) => {
               _item.classList.remove('active')
             })
-            item.classList.add('active')
             instance.slideTo(target)
           }
         })
