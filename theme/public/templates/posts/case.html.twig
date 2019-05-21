@@ -10,7 +10,7 @@
     <div class="section">
       <div class="row">
         <div class="col w-7/12 flex flex-col justify-between">
-          <div class="w-full desktop:w-11/12 wide:w-9/12">
+          <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
             <h1 class="text-2xl text-red">Mestic Bio Lab</h1>
             <p class="text-2xl indent mb-8">
               Lorem ipsum dolor sit amet, consectetur adipisicing elire.
@@ -61,18 +61,18 @@
     <div class="section">
       <div class="row justify-between">
         <div class="col">
-          <a class="flex items-center" href="#">
+          <a class="flex items-end" href="#">
             {% include "components/arrow.html.twig" with {
               direction : "left"
             } %}
-            <div class="ml-4 text-lg text-red ">
+            <div class="ml-4 text-xl text-red ">
               Back to overview
             </div>
           </a>
         </div>
         <div class="col">
-          <a class="flex items-center" href="#">
-            <div class="mr-4 text-lg text-grey">
+          <a class="flex items-end" href="#">
+            <div class="mr-4 text-xl text-grey">
               STRP Biënale
             </div>
             {% include "components/arrow.html.twig" with {

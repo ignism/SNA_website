@@ -7,11 +7,15 @@ figure {
     position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 20;
   }
 
   &:after {
     content: '';
     display: block;
+    position: relative;
+    width: 100%;
+    z-index: 10;
   }
 }
 
@@ -26,33 +30,21 @@ figure {
 
 .figure {
   &-sq:after {
-    position: relative;
-    width: 100%;
     padding-top: 100%;
   }
   &-l:after {
-    position: relative;
-    width: 100%;
     padding-top: 55.55556%;
   }
   &-p-xs:after {
-    position: relative;
-    width: 100%;
     padding-top: 109.9%;
   }
   &-p-sm:after {
-    position: relative;
-    width: 100%;
     padding-top: 116.66667%;
   }
   &-p-md:after {
-    position: relative;
-    width: 100%;
     padding-top: 119.4%;
   }
   &-p-lg:after {
-    position: relative;
-    width: 100%;
     padding-top: 126.1%;
   }
 }

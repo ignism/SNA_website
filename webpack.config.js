@@ -12,6 +12,9 @@ module.exports = (env, options) => {
   console.log('options: ')
   console.log(options)
 
+  if (options.mode === 'production') {
+    process.env.NODE_ENV = 'production'
+  }
   return ({
     entry: { 
       theme: './theme/src/index.js' 

@@ -3,16 +3,17 @@
     <div class="section">
       <div class="row">
         <div class="col w-7/12 flex flex-col justify-between">
-          <div class="w-full desktop:w-11/12 wide:w-9/12">
-            <h1 class="title">Mestic Bio Lab</h1>
-            <p class="text-3xl indent mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elire.
-            </p>
-            <a href="{{ site.link }}/case/mestic-bio-lab/">
-            {% include "components/cross.html.twig" with {
-              cross_color : "grey",
-              cross_size: "lg"
-            } %}
+          <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
+            <a class="catch-hover" href="{{ site.link }}/case/mestic-bio-lab/">
+              <h1 class="title">Mestic Bio Lab</h1>
+              <p class="text-3xl text-grey indent mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elire.
+              </p>
+              {% include "components/cross.html.twig" with {
+                hover_saturate: true,
+                cross_color : "red",
+                cross_size: "lg"
+              } %}
             </a>
           </div>
           <div class="flex justify-between">
@@ -21,33 +22,17 @@
           </div>
         </div>
         <div class="col w-5/12">
-          <figure class="figure-p-lg bg-grey">
-            <img class="desaturate" src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
-            <div class="absolute pin overflow-hidden flex justify-start">
-              <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_left_grey_dot_pattern_2.svg" alt="">
-            </div>
-          </figure>
+          <a href="#">
+            <figure class="figure-p-lg bg-grey">
+              <img class="desaturate hover:saturate" src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
+              <div class="absolute pin overflow-hidden flex justify-start">
+                <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_left_grey_dot_pattern_2.svg" alt="">
+              </div>
+            </figure>
+          </a>
         </div>
       </div>
     </div>
     <div class="dotted-line"></div>
-  </div>
-</div>
-
-{#  #}
-
-<div class="bg-grey-light">
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="col w-full flex justify-end items-center">
-          <div class="text-xl text-red mr-4">See all cases</div>
-          {% include "components/cross.html.twig" with {
-            cross_color : "red",
-            cross_size: "sm"
-          } %}
-        </div>
-      </div>
-    </div>
   </div>
 </div>

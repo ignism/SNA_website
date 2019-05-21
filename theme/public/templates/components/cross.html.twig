@@ -6,7 +6,7 @@
   {% set cross_size = "sm" %}
 {% endif %}
 
-<div class="cross-{{ cross_size }}">
+<div class="cross-{{ cross_size }} {% if hover_saturate %}cross-grey-to-red{% endif %}">
   <div class="cross-row">
     <div  class="cross-dot">
       <div class="absolute pin">

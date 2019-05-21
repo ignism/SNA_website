@@ -22,10 +22,12 @@ button {
 
 .dot-red,
 .dot-white {
-  @apply relative ml-6;
+  @apply relative;
+  margin-left: 1.5rem;
   &::before {
-    @apply absolute pin-l pin-t -ml-6 border-2 rounded-full bg-transparent;
+    @apply absolute pin-l pin-t border-2 rounded-full bg-transparent;
     content: '';
+    margin-left: -1.5rem;
     width: 18px;
     height: 18px;
     margin-top: 5.5px;
@@ -48,6 +50,33 @@ button {
   }
   &.active::before {
     @apply bg-white;
+  }
+}
+
+@screen desktop-sm {
+  .dot-red,
+  .dot-white {
+    margin-left: 1.25rem;
+    &::before {
+      margin-left: -1.25rem;
+      width: 15px;
+      height: 15px;
+      margin-top: 4px;
+    }
+  }
+}
+
+@screen desktop-lg {
+  .dot-red,
+  .dot-white {
+    margin-left: 1.5rem;
+    &::before {
+      content: '';
+      margin-left: -1.5rem;
+      width: 18px;
+      height: 18px;
+      margin-top: 5.5px;
+    }
   }
 }
 

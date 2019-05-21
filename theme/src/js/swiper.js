@@ -23,10 +23,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       }
     })
 
-    let count = swiper.querySelector('.swiper-count') 
+    let count = swiper.querySelector('.swiper-count')
     if (count) {
       instance.on('slideChangeTransitionEnd', () => {
-        console.log(instance.realIndex, instance.slides.length)
         let index = instance.realIndex + 1
         let total = instance.slides.length - 2
         count.innerHTML = index + '/' + total
@@ -36,12 +35,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let pagination = swiper.querySelector('.swiper-custom-pagination')
     if (pagination) {
       let items = Array.from(pagination.querySelectorAll('.pagination-item'))
-      
+
       instance.on('slideChangeTransitionStart', () => {
-        console.log(instance.realIndex + 1)
         items.forEach((item) => {
           item.classList.remove('active')
-          if (parseInt(item.getAttribute('data-swiper-target')) == parseInt(instance.realIndex + 1)) {
+          if (
+            parseInt(item.getAttribute('data-swiper-target')) ==
+            parseInt(instance.realIndex + 1)
+          ) {
             item.classList.add('active')
           }
         })
@@ -49,15 +50,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       items.forEach((item) => {
         let target = item.getAttribute('data-swiper-target')
+        let label = swiper.querySelector('.swiper-label')
 
         item.addEventListener('click', (event) => {
-          if (!item.classList.contains('active')) {
-            items.forEach((_item) => {
-              _item.classList.remove('active')
-            })
-            instance.slideTo(target)
+          if (item.classList.contains('link-click')) {
+            //
+          } else {
+            event.preventDefault()
+            if (!item.classList.contains('active')) {
+              items.forEach((_item) => {
+                _item.classList.remove('active')
+              })
+              instance.slideTo(target)
+
+              if (label) {
+
+              }
+            }
           }
         })
+
+        if (item.classList.contains('trigger-hover')) {
+          item.addEventListener('mouseenter', (event) => {
+            if (!item.classList.contains('active')) {
+              items.forEach((_item) => {
+                _item.classList.remove('active')
+              })
+              instance.slideTo(target)
+
+              if (label) {
+                label.querySelector('.label-left').textContent =  item.getAttribute('data-label-left')
+                label.querySelector('.label-right').textContent =  item.getAttribute('data-label-right')
+              }
+            }
+          })
+        }
       })
     }
   })

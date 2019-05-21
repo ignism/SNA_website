@@ -1,73 +1,105 @@
-@define-mixin text-m-lg {
+@define-mixin text-lg {
   font-weight: 400;
   font-size: 45px;
   line-height: 50px;
   letter-spacing: -0.6px;
 }
 
-@define-mixin text-m-xl {
+@define-mixin text-xl {
   font-weight: 400;
   font-size: 60px;
   line-height: 50px;
   letter-spacing: -0.5px;
 }
 
-@define-mixin text-m-2xl {
-  font-weight: 400;
-  font-size: 80px;
-  line-height: 65px;
-  letter-spacing: -2px;
-}
-
-@define-mixin text-m-3xl {
-  font-weight: 400;
-  font-size: 80px;
-  line-height: 65px;
-  letter-spacing: -2px;
-}
-
-@define-mixin text-lg {
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 28px;
-  letter-spacing: -0.4px;
-}
-
-@define-mixin text-xl {
-  font-weight: 400;
-  font-size: 45px;
-  line-height: 40px;
-  letter-spacing: -1px;
-}
-
 @define-mixin text-2xl {
   font-weight: 400;
-  font-size: 60px;
-  line-height: 55px;
+  font-size: 80px;
+  line-height: 65px;
   letter-spacing: -2px;
 }
 
 @define-mixin text-3xl {
   font-weight: 400;
-  font-size: 65px;
-  line-height: 51px;
+  font-size: 80px;
+  line-height: 65px;
   letter-spacing: -2px;
 }
 
+/*  */
+
+@define-mixin text-lg-sm {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.12;
+  letter-spacing: -0.016;
+}
+
+@define-mixin text-xl-sm {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 0.88;
+  letter-spacing: -0.04;
+}
+
+@define-mixin text-2xl-sm {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 1.09;
+  letter-spacing: -0.03;
+}
+
+@define-mixin text-3xl-sm {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 0.78;
+  letter-spacing: -0.03;
+}
+
+/*  */
+
+@define-mixin text-lg-lg {
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 1.12;
+  letter-spacing: -0.016;
+}
+
+@define-mixin text-xl-lg {
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 0.88;
+  letter-spacing: -0.04;
+}
+
+@define-mixin text-2xl-lg {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1.09;
+  letter-spacing: -0.03;
+}
+
+@define-mixin text-3xl-lg {
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 0.78;
+  letter-spacing: -0.03;
+}
+
 .text-3xl, h1 {
-  @mixin text-m-3xl;
+  @mixin text-3xl;
 }
 
 .text-2xl {
-  @mixin text-m-2xl;
+  @mixin text-2xl;
 }
 
 .text-xl, h2 {
-  @mixin text-m-xl;
+  @mixin text-xl;
 }
 
 .text-lg, p {
-  @mixin text-m-lg;
+  @mixin text-lg;
 }
 
 h1 {
@@ -121,21 +153,46 @@ p {
   text-indent: 1em;
 }
 
-@screen md {
+@screen desktop-sm {
   .text-3xl, h1 {
-    @mixin text-3xl;
+    @mixin text-3xl-sm;
   }
 
   .text-2xl {
-    @mixin text-2xl;
+    @mixin text-2xl-sm;
   }
   
   .text-xl, h2 {
-    @mixin text-xl;
+    @mixin text-xl-sm;
   }
   
   .text-lg, p {
-    @mixin text-lg;
+    @mixin text-lg-sm;
+  }
+  
+  h1 .superscript {
+    top: 4px;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: -0.3px;
+  }
+}
+
+@screen desktop-lg {
+  .text-3xl, h1 {
+    @mixin text-3xl-lg;
+  }
+
+  .text-2xl {
+    @mixin text-2xl-lg;
+  }
+  
+  .text-xl, h2 {
+    @mixin text-xl-lg;
+  }
+  
+  .text-lg, p {
+    @mixin text-lg-lg;
   }
   
   h1 .superscript {

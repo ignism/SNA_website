@@ -5,22 +5,18 @@
   .cross-row {
     margin-bottom: 3px;
   }
-
   .cross-dot {
     position: relative;
     width: 3px;
     padding-top: 3px;
     transition: margin 200ms ease-out;
-
     img {
       position: absolute;
     }
   }
-
   .cross-dot:not(:first-child) {
     margin-left: 3px;
   }
-
   .cross-row:nth-child(1),
   .cross-row:nth-child(2),
   .cross-row:nth-child(3),
@@ -31,7 +27,6 @@
       margin-left: 18.5px;
     }
   }
-
   &.hover,
   &:hover {
     .cross-row:nth-child(2),
@@ -41,7 +36,6 @@
       }
     }
   }
-
   &.hover,
   &:hover {
     .cross-row:nth-child(3),
@@ -60,22 +54,18 @@
   .cross-row {
     margin-bottom: 5px;
   }
-
   .cross-dot {
     position: relative;
     width: 5px;
     padding-top: 5px;
     transition: margin 200ms ease-out;
-
     img {
       position: absolute;
     }
   }
-
   .cross-dot:not(:first-child) {
     margin-left: 5px;
   }
-
   .cross-row:nth-child(1),
   .cross-row:nth-child(2),
   .cross-row:nth-child(3),
@@ -86,7 +76,6 @@
       margin-left: 30px;
     }
   }
-
   &.hover,
   &:hover {
     .cross-row:nth-child(2),
@@ -96,7 +85,6 @@
       }
     }
   }
-
   &.hover,
   &:hover {
     .cross-row:nth-child(3),
@@ -108,3 +96,44 @@
   }
 }
 
+.cross-grey-to-red {
+  filter: saturate(0) brightness(1.29);
+  transition: filter 400ms ease;
+  &:hover {
+    filter: saturate(1) brightness(1);
+  }
+}
+
+.catch-hover:hover {
+  .cross-sm {
+    .cross-row:nth-child(2),
+    .cross-row:nth-child(6) {
+      .cross-dot {
+        margin-left: 62.82167%;
+      }
+    }
+    .cross-row:nth-child(3),
+    .cross-row:nth-child(5) {
+      .cross-dot {
+        margin-left: 79.48834%;
+      }
+    }
+  }
+  .cross-lg {
+    .cross-row:nth-child(2),
+    .cross-row:nth-child(6) {
+      .cross-dot {
+        margin-left: 62.82167%;
+      }
+    }
+    .cross-row:nth-child(3),
+    .cross-row:nth-child(5) {
+      .cross-dot {
+        margin-left: 79.48834%;
+      }
+    }
+  }
+  .cross-grey-to-red {
+    filter: saturate(1) brightness(1);
+  }
+}

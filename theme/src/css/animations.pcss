@@ -17,9 +17,14 @@
 
 .desaturate {
   filter: saturate(0);
+  transition: filter 400ms ease;
 }
 
 .saturate {
+  filter: saturate(1);
+}
+
+.hover\:saturate:hover {
   filter: saturate(1);
 }
 

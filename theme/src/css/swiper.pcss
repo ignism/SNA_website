@@ -1,6 +1,11 @@
 .swiper-custom-pagination {
   .pagination-item {
     cursor: pointer;
+
+    a {
+      @apply text-grey;
+    }
+    &.active a,
     &.active {
       @apply text-red;
     }
