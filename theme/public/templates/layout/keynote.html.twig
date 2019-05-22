@@ -1,16 +1,16 @@
 <div class="container">
+  <div class="dotted-line"></div>
   <div class="section swiper-section" data-effect="fade">
-    <div class="dotted-line mb-10"></div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide">
+        <div class="swiper-slide keynote">
           <div class="flex flex-no-wrap justify-between">
-            <div class="w-5/12 mr-2/12 relative">
-              <div class="text-3xl text-red absolute pin-t pin-l">
+            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
+              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
                 01.
               </div>
-              <div class="text-xl absolute pin flex items-center">
+              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
                 <div>
                   <h2 class="text-red">Mestic Bio Lab</h2>
                   <p class="text-xl indent mb-8">
@@ -19,19 +19,19 @@
                 </div>
               </div>
             </div>
-            <div class="w-5/12">
+            <div class="hidden desktop-sm:block w-5/12">
               <figure class="figure-p-xs bg-grey"></figure>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="swiper-slide keynote">
           <div class="flex flex-no-wrap justify-between">
-            <div class="w-5/12 mr-2/12 relative">
-              <div class="text-3xl text-red absolute pin-t pin-l">
+            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
+              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
                 02.
               </div>
-              <div class="text-xl absolute pin flex items-center">
+              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
                 <div>
                   <h2 class="text-red">Ispum dolor</h2>
                   <p class="text-xl indent mb-8">
@@ -40,19 +40,19 @@
                 </div>
               </div>
             </div>
-            <div class="w-5/12">
+            <div class="hidden desktop-sm:block w-5/12">
               <figure class="figure-p-xs bg-red"></figure>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="swiper-slide keynote">
           <div class="flex flex-no-wrap justify-between">
-            <div class="w-5/12 mr-2/12 relative">
-              <div class="text-3xl text-red absolute pin-t pin-l">
+            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
+              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
                 03.
               </div>
-              <div class="text-xl absolute pin flex items-center">
+              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
                 <div>
                   <h2 class="text-red">Lorem</h2>
                   <p class="text-xl indent mb-8">
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            <div class="w-5/12">
+            <div class="hidden desktop-sm:block w-5/12">
               <figure class="figure-p-xs bg-black"></figure>
             </div>
           </div>
@@ -69,7 +69,7 @@
 
       </div>
 
-      <div class="absolute pin-b pin-l flex z-10">
+      <div class="absolute pin-b pin-r desktop-sm:pin-l flex z-10">
         <div class="swiper-prev mr-2">
           {% include "components/arrow.html.twig" with {
             direction : "left",

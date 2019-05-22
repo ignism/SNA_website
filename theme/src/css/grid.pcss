@@ -3,7 +3,7 @@ $column-space: 4;
 $offset: 10;
 /*  */
 .container {
-  @apply max-w-5xl mx-auto px-10;
+  @apply max-w-5xl mx-auto px-5;
 }
 
 .section {
@@ -22,5 +22,11 @@ $offset: 10;
   padding: 0 0.625rem;
   &-content {
     @apply p-4;
+  }
+}
+
+@screen tablet {
+  .container {
+    @apply px-10;
   }
 }

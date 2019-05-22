@@ -1,16 +1,40 @@
 .footer-wrapper {
-  @apply relative w-full mt-8;
+  @apply relative w-full bg-red;
   min-height: 350px;
 }
 
 .footer {
   @apply absolute w-full pin-l z-40;
-  min-height: 350px;
+  min-height: 100vh;
   bottom: 100%;
-  margin-bottom: -350px;
+  margin-bottom: -100vh;
 }
 
 .footer-fixed {
   @apply text-white fixed pin-b pin-l pin-r bg-red z-40;
   height: 50px;
+}
+
+@screen tablet {
+  .footer-wrapper {
+    @apply mt-8;
+    min-height: 50vh;
+  }
+
+  .footer {
+    min-height: 50vh;
+    margin-bottom: -50vh;
+  }
+}
+
+@screen desktop-sm {
+  .footer-wrapper {
+    @apply mt-8;
+    min-height: 350px;
+  }
+
+  .footer {
+    min-height: 350px;
+    margin-bottom: -350px;
+  }
 }

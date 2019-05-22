@@ -1,4 +1,4 @@
-<div class="fixed w-full h-32 z-40">
+<div class="fixed w-full h-32 z-40 hidden desktop-sm:block">
   <div class="container">
     <nav class="nav pt-10 pb-2 border-b-2 border-red">
       <div class="row justify-between items-end">
@@ -21,3 +21,32 @@
     </nav>
   </div>
 </div>
+
+<div class="fixed w-full h-32 z-40 block desktop-sm:hidden">
+
+      <div class="container container-nav-mobile">
+        <nav class="nav nav-mobile relative pt-5 pb-2 border-b-2 border-red">
+          <div class="row justify-between items-center">
+            <div class="col">
+              <h2>
+                <a class="text-red" href="{{site.link}}">
+                  <span class="logo">Suna.</span>
+                </a>
+              </h2>
+            </div>
+            <div class="col">
+              {% include "components/burger.html.twig" %}
+            </div>
+          </div>
+          <ul class="absolute pin-b pin-l flex nav-items list-reset text-lg">
+            <li class="nav-item mobile dot-white {% if about_active %}active{% endif %}">
+              <a class="text-white" href="{{ site.link }}/about">About</a>
+            </li>
+            <li class="nav-item mobile dot-white {% if portfolio_active %}active{% endif %}">
+              <a class="text-white" href="{{ site.link }}/portfolio">Portfolio</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  </div>

@@ -1,29 +1,29 @@
 @define-mixin text-lg {
   font-weight: 400;
-  font-size: 45px;
-  line-height: 50px;
-  letter-spacing: -0.6px;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.016em;
 }
 
 @define-mixin text-xl {
   font-weight: 400;
-  font-size: 60px;
-  line-height: 50px;
-  letter-spacing: -0.5px;
+  font-size: 30px;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
 }
 
 @define-mixin text-2xl {
   font-weight: 400;
-  font-size: 80px;
-  line-height: 65px;
-  letter-spacing: -2px;
+  font-size: 40px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
 }
 
 @define-mixin text-3xl {
   font-weight: 400;
-  font-size: 80px;
-  line-height: 65px;
-  letter-spacing: -2px;
+  font-size: 40px;
+  line-height: 0.78;
+  letter-spacing: -0.03em;
 }
 
 /*  */
@@ -32,28 +32,28 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 1.12;
-  letter-spacing: -0.016;
+  letter-spacing: -0.016em;
 }
 
 @define-mixin text-xl-sm {
   font-weight: 400;
   font-size: 30px;
   line-height: 0.88;
-  letter-spacing: -0.04;
+  letter-spacing: -0.04em;
 }
 
 @define-mixin text-2xl-sm {
   font-weight: 400;
   font-size: 45px;
   line-height: 1.09;
-  letter-spacing: -0.03;
+  letter-spacing: -0.03em;
 }
 
 @define-mixin text-3xl-sm {
   font-weight: 400;
   font-size: 50px;
   line-height: 0.78;
-  letter-spacing: -0.03;
+  letter-spacing: -0.03em;
 }
 
 /*  */
@@ -62,28 +62,28 @@
   font-weight: 400;
   font-size: 25px;
   line-height: 1.12;
-  letter-spacing: -0.016;
+  letter-spacing: -0.016em;
 }
 
 @define-mixin text-xl-lg {
   font-weight: 400;
   font-size: 45px;
   line-height: 0.88;
-  letter-spacing: -0.04;
+  letter-spacing: -0.04em;
 }
 
 @define-mixin text-2xl-lg {
   font-weight: 400;
   font-size: 60px;
   line-height: 1.09;
-  letter-spacing: -0.03;
+  letter-spacing: -0.03em;
 }
 
 @define-mixin text-3xl-lg {
   font-weight: 400;
   font-size: 65px;
   line-height: 0.78;
-  letter-spacing: -0.03;
+  letter-spacing: -0.03em;
 }
 
 .text-3xl, h1 {
@@ -110,9 +110,9 @@ h1 {
   }
   .superscript {
     position: absolute;
-    top: 0;
-    font-size: 40px;
-    line-height: 40px;
+    /* top: 0; */
+    font-size: 0.5em;
+    line-height: 1;
     letter-spacing: -0.4px;
   }
 }
@@ -123,16 +123,20 @@ p {
   }
   
   .highlight {
-    @apply text-red relative ml-6;
+    @apply text-red relative ml-5;
 
     &::before {
-      @apply absolute pin-l pin-t -ml-6 border-red border-2 rounded-full bg-red;
+      @apply absolute pin-l pin-t -ml-5 border-red border-2 rounded-full bg-red;
       content: '';
       box-sizing: border-box;
-      width: 18px;
-      height: 18px;
-      margin-top: 8px;
+      width: 15px;
+      height: 15px;
+      margin-top: 5px;
     }
+  }
+
+  &.footer-invite {
+    @mixin text-2xl;
   }
 }
 
@@ -144,13 +148,13 @@ p {
 
 .caption {
   @apply text-black;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1em;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.125px;
 }
 
 .indent {
-  text-indent: 1em;
+  text-indent: 0.5em;
 }
 
 @screen desktop-sm {
@@ -176,6 +180,20 @@ p {
     line-height: 22px;
     letter-spacing: -0.3px;
   }
+
+  .caption {
+    @apply text-black;
+    font-size: 22px;
+    line-height: 1em;
+    letter-spacing: -0.3px;
+  }
+  .indent {
+    text-indent: 1em;
+  }
+
+  p.footer-invite {
+    @mixin text-xl-sm;
+  }
 }
 
 @screen desktop-lg {
@@ -200,5 +218,9 @@ p {
     font-size: 22px;
     line-height: 22px;
     letter-spacing: -0.3px;
+  }
+
+  p.footer-invite {
+    @mixin text-xl-lg;
   }
 }

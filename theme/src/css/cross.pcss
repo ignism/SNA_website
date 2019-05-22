@@ -47,6 +47,50 @@
   }
 }
 
+.expander-section {
+  .cross-sm {
+    &.hover,
+    &:hover {
+      .cross-row:nth-child(2),
+      .cross-row:nth-child(6) {
+        .cross-dot {
+          margin-left: 18.5px;
+        }
+      }
+    }
+    &.hover,
+    &:hover {
+      .cross-row:nth-child(3),
+      .cross-row:nth-child(5) {
+        .cross-dot {
+          margin-left: 18.5px;
+        }
+      }
+    }
+  }
+  .active {
+    .cross-grey-to-red {
+        filter: saturate(1) brightness(1);
+      
+    }
+
+    .cross-sm {
+      .cross-row:nth-child(2),
+      .cross-row:nth-child(6) {
+        .cross-dot {
+          margin-left: 62.82167%;
+        }
+      }
+      .cross-row:nth-child(3),
+      .cross-row:nth-child(5) {
+        .cross-dot {
+          margin-left: 79.48834%;
+        }
+      }
+    }
+  }
+}
+
 .cross-lg {
   position: relative;
   width: 65px;

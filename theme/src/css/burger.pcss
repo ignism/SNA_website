@@ -1,0 +1,97 @@
+.burger {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  .burger-dot {
+    position: relative;
+    width: 3px;
+    padding-top: 3px;
+    transition: margin 200ms ease-out;
+    img {
+      position: absolute;
+    }
+  }
+  .burger-dot:not(:first-child) {
+    margin-left: 3px;
+  }
+  .burger-row {
+    transition: 200ms ease;
+    &:not(:first-child) {
+      margin-top: 12px;
+      margin-bottom: 5px;
+    }
+  }
+  &.active {
+    .burger-row:nth-child(1) {
+      transform-origin: left;
+      transform: translateY(1px) translateX(10px) rotate(45deg);
+      filter: saturate(0) brightness(2);
+    }
+    .burger-row:nth-child(2) {
+      opacity: 0;
+    }
+    .burger-row:nth-child(3) {
+      transform-origin: left;
+      transform: translateY(-1px) translateX(10px) rotate(-45deg);
+      filter: saturate(0) brightness(2);
+    }
+  }
+}
+.container-nav-mobile {
+  background: transparent;
+  .nav-items {
+    bottom: 100px;
+    transition: 200ms ease-out;
+  }
+  &.active {
+    @apply bg-red;
+    .nav-items {
+      bottom: 20px;
+    }
+  }
+  a {
+    @apply text-white;
+  }
+}
+
+@screen desktop-sm {
+  .burger {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    .burger-dot {
+      position: relative;
+      width: 5px;
+      padding-top: 5px;
+      transition: margin 200ms ease-out;
+      img {
+        position: absolute;
+      }
+    }
+    .burger-dot:not(:first-child) {
+      margin-left: 5px;
+    }
+    .burger-row {
+      transition: 200ms ease;
+      &:not(:first-child) {
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+    }
+    &.active {
+      .burger-row:nth-child(1) {
+        transform-origin: left;
+        transform: translateY(2px) translateX(10px) rotate(45deg);
+        filter: saturate(0) brightness(2);
+      }
+      .burger-row:nth-child(2) {
+        opacity: 0;
+      }
+      .burger-row:nth-child(3) {
+        transform-origin: left;
+        transform: translateY(-2px) translateX(10px) rotate(-45deg);
+        filter: saturate(0) brightness(2);
+      }
+    }
+  }
+}

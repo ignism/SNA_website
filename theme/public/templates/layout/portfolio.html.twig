@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="section swiper-section" data-effect="fade">
+  <div class="section swiper-section hidden desktop-sm:block" data-effect="fade">
 
     <div class="row items-stretch">
       <div class="col self-auto w-7/12 relative">
@@ -19,16 +19,6 @@
               <h1 class="text-2xl">Dutch Design Week<span class="superscript">03</span></h1>
             </a>
           </li>
-          <li class="pagination-item trigger-hover link-click" data-swiper-target="4" >
-            <a href="http://localhost:8080/case/mestic-bio-lab/3">
-              <h1 class="text-2xl">Glow Next Eindhoven<span class="superscript">04</span></h1>
-            </a>
-          </li>
-          <li class="pagination-item trigger-hover link-click" data-swiper-target="5" data-label-left="5" data-label-right="2019">
-            <a href="http://localhost:8080/case/mestic-bio-lab/4">
-              <h1 class="text-2xl">Makers Day<span class="superscript">05</span></h1>
-            </a>
-          </li>
         </ul>
         <div class="absolute col w-full pin-l pin-b">
           <div class="swiper-label flex justify-between w-full">
@@ -42,84 +32,16 @@
           <div class="swiper-container">
             <div class="swiper-wrapper">
 
-              {# <div class="swiper-slide">
-                <div class="row flex-no-wrap items-end">
-                  <div class="col w-7/12 flex justify-between">
-                    <div class="caption">Fashion Innovation</div>
-                    <div class="caption">2016</div>
-                  </div>
-                  <div class="col w-5/12">
-                    <figure class="figure-p-lg bg-black"></figure>
-                  </div>
-                </div>
+              <div class="swiper-slide">
+                <figure class="figure-p-lg bg-red"></figure>
               </div>
 
               <div class="swiper-slide">
-                <div class="row flex-no-wrap items-end">
-                  <div class="col w-7/12 flex justify-between">
-                    <div class="caption">Lorem Ipsum</div>
-                    <div class="caption">2017</div>
-                  </div>
-                  <div class="col w-5/12">
-                    <figure class="figure-p-lg bg-red"></figure>
-                  </div>
-                </div>
+                <figure class="figure-p-lg bg-black"></figure>
               </div>
 
               <div class="swiper-slide">
-                <div class="row flex-no-wrap items-end">
-                  <div class="col w-7/12 flex justify-between">
-                    <div class="caption">Sit Dolor</div>
-                    <div class="caption">2018</div>
-                  </div>
-                  <div class="col w-5/12">
-                    <figure class="figure-p-lg bg-grey"></figure>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="row flex-no-wrap items-end">
-                  <div class="col w-7/12 flex justify-between">
-                    <div class="caption">Fashion Innovation</div>
-                    <div class="caption">2016</div>
-                  </div>
-                  <div class="col w-5/12">
-                    <figure class="figure-p-lg bg-black"></figure>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="row flex-no-wrap items-end">
-                  <div class="col w-7/12 flex justify-between">
-                    <div class="caption">Lorem Ipsum</div>
-                    <div class="caption">2017</div>
-                  </div>
-                  <div class="col w-5/12">
-                    <figure class="figure-p-lg bg-red"></figure>
-                  </div>
-                </div>
-              </div> #}
-
-              <div class="swiper-slide">
-                    <figure class="figure-p-lg bg-red"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                    <figure class="figure-p-lg bg-black"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                    <figure class="figure-p-lg bg-red"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                    <figure class="figure-p-lg bg-black"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                    <figure class="figure-p-lg bg-grey"></figure>
+                <figure class="figure-p-lg bg-red"></figure>
               </div>
 
             </div>
@@ -134,4 +56,59 @@
       </div>
     </div>
   </div>
+
+  <div class="section block desktop-sm:hidden">
+
+    {# Case tease repeat #}
+    <div class="row">
+      <div class="col w-full desktop-sm:w-7/12 flex flex-col justify-between">
+        <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
+          <a class="catch-hover" href="{{ site.link }}/case/mestic-bio-lab/">
+            <div class="flex desktop-sm:hidden justify-between items-end mb-10">
+              <div class="w-10/12">
+                <h1 class="title">Mestic Bio Lab</h1>
+                <p class="text-3xl text-grey indent">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elire.
+                </p>
+              </div>
+              {% include "components/cross.html.twig" with {
+                hover_saturate : true,
+                cross_color: "red",
+                cross_size: "sm"
+              } %}
+            </div>
+            <div class="hidden desktop-sm:block">
+              <h1 class="title">Mestic Bio Lab</h1>
+              <p class="text-3xl text-grey indent mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elire.
+              </p>
+              {% include "components/cross.html.twig" with {
+                hover_saturate : true,
+                cross_color: "red",
+                cross_size: "lg"
+              } %}
+            </div>
+          </a>
+        </div>
+        <div class="flex justify-between mb-5">
+          <div class="caption">Fashion Innovation</div>
+          <div class="caption">2019</div>
+        </div>
+      </div>
+      <div class="col w-full desktop-sm:w-5/12">
+        <a href="#">
+          <figure class="figure-p-lg bg-grey">
+            <img class="desaturate hover:saturate" src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
+            <div class="absolute pin overflow-hidden flex justify-start">
+              <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_left_grey_dot_pattern_2.svg" alt="">
+            </div>
+          </figure>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="dotted-line"></div>
+  {#  #}
+
+</div>
 </div>

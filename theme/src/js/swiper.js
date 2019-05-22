@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         crossFade: true
       },
       pagination: {
-        el: swiper.querySelector('.swiper-pagination')
+        // el: swiper.querySelector('.swiper-pagination')
       },
       navigation: {
         nextEl: swiper.querySelector('.swiper-next'),
@@ -39,11 +39,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       instance.on('slideChangeTransitionStart', () => {
         items.forEach((item) => {
           item.classList.remove('active')
+          console.log('..removing', item.getAttribute('data-swiper-target'))
           if (
             parseInt(item.getAttribute('data-swiper-target')) ==
             parseInt(instance.realIndex + 1)
           ) {
             item.classList.add('active')
+            console.log('adding...', item.getAttribute('data-swiper-target'))
           }
         })
       })
@@ -56,17 +58,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
           if (item.classList.contains('link-click')) {
             //
           } else {
-            event.preventDefault()
-            if (!item.classList.contains('active')) {
-              items.forEach((_item) => {
-                _item.classList.remove('active')
-              })
+            // console.log('tick')
+            // //event.preventDefault()
+            // if (!item.classList.contains('active')) {
+            //   // items.forEach((_item) => {
+            //   //   _item.classList.remove('active')
+            //   // })
               instance.slideTo(target)
 
-              if (label) {
+            //   if (label) {
 
-              }
-            }
+            //   }
+            // }
           }
         })
 

@@ -1,0 +1,31 @@
+.pagination-item {
+  
+  .expander-content {
+    @apply text-grey;
+    height: auto;
+    max-height: 0;
+    transition: 400ms ease-out;
+    overflow: hidden;
+
+    p:last-child {
+      @apply mb-5;
+    }
+  }
+  
+  &.active {
+    @apply text-red;
+    .expander-content {
+      max-height: 100vh;
+    }
+  }
+
+}
+
+.expander-section {
+  .pagination-item {
+    .expander-title {
+      display: flex;
+      height: 1.6em;
+    }
+  }
+}

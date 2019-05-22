@@ -6,7 +6,33 @@
 
 {% block main %}
 
-  {% include "layout/header.html.twig" %}
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
+          <figure class="figure-p-sm bg-grey">
+            <img class="desaturate scroll-saturate" src="{{ theme.link }}/images/placeholder/presentation.jpg" alt="">
+            <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
+          </figure>
+          <div class="flex justify-between my-5">
+            <div class="text-lg text-black">Suna Karaca</div>
+            <div class="text-lg text-black">Founder</div>
+          </div>
+        </div>
+        <div class="col scroll-size scroll-size-right w-full desktop-sm:w-5/12 mt-1/12">
+          <figure class="figure-p-lg bg-grey">
+            <img class="desaturate scroll-saturate" src="{{ theme.link }}/images/placeholder/4ad728a1dfd72b6332e1dfb1c20e4147ce4feb32.jpg" alt="">
+            <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
+          </figure>
+          <div class="flex justify-between my-5">
+            <div class="text-lg text-black">Suna Karaca</div>
+            <div class="text-lg text-black">Founder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dotted-line"></div>
+  </div>
 
   {% include "layout/swiper-text.html.twig" with { 
     link: ''

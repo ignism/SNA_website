@@ -2,7 +2,7 @@ import { EventBus } from './event-bus'
 
 let scrollOut = document.querySelector('.scroll-out')
 let nav = document.querySelector('.nav')
-let items = Array.from(document.querySelectorAll('.nav-item'))
+let items = Array.from(document.querySelectorAll('.nav-item:not(.mobile)'))
 
 if (scrollOut) {
   window.addEventListener('scroll', onScroll)

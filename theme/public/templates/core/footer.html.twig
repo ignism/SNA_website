@@ -3,16 +3,26 @@
     <div class="container">
       <div class="section">
         <div class="row">
-          <div class="col w-6/12 mr-1/12">
-            <p class="text-xl">
-              You want to share your<br>
-              project and your philosophy<br>
-              through a singular event?<br>
+          <div class="col w-10/12 desktop-sm:w-6/12 desktop-sm:mr-1/12">
+            <p class="footer-invite">
+              You want to share your<br class="hidden desktop-sm:block">
+              project and your philosophy<br class="hidden desktop-sm:block">
+              through a singular event?<br class="hidden desktop-sm:block">
               Get in touch with us.
             </p>
           </div>
-          <div class="col w-5/12 text-lg relative">
-            <div class="absolute pin-t pin-r" style="margin-right: 0.125rem">
+          <div class="col relative w-2/12 desktop-sm:hidden">
+            <div class="absolute pin-t pin-r" style="margin-right: 0.625rem">
+              <button class="footer-close">
+                {% include "components/arrow.html.twig" with {
+                  direction : "down",
+                  color: "white"
+                } %}
+              </button>
+            </div>
+          </div>
+          <div class="col w-full mt-10 desktop-sm:mt-0 desktop-sm:w-5/12 text-lg relative">
+            <div class="hidden desktop-sm:block absolute pin-t pin-r" style="margin-right: 0.625rem">
               <button class="footer-close">
                 {% include "components/arrow.html.twig" with {
                   direction : "down",
@@ -22,7 +32,7 @@
             </div>
             <div class="flex">
               <div class="w-8">E</div>
-              <div class="flex-grow">hallo@suna.nl</div>
+              <div class="flex-grow underline">hallo@suna.nl</div>
             </div>
             <div class="flex">
               <div class="w-8">T</div>
@@ -46,7 +56,11 @@
   <div class="container h-full flex items-center">
     <div class="flex w-full justify-between">
       <button class="footer-toggle dot-white">Contact us</button>
-      <div class="">tw fa li</div>
+      <div class="h-6">
+        <img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-twitter.svg" alt="">
+        <img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-facebook.svg" alt="">
+        <img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-linkedin.svg" alt="">
+      </div>
     </div>
   </div>
 </div>

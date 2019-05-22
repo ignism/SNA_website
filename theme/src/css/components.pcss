@@ -14,23 +14,32 @@ button {
 }
 
 .go-to-top {
-  @apply absolute pin-b w-full text-right;
+  @apply relative w-full text-right;
   a {
-    @apply absolute pin-b pin-r z-10;
+    @apply justify-between items-center;
   }
+}
+
+@screen desktop-sm {
+  .go-to-top {
+    @apply absolute pin-b w-full text-right;
+    a {
+      @apply absolute pin-b pin-r z-10;
+    }
+  }  
 }
 
 .dot-red,
 .dot-white {
   @apply relative;
-  margin-left: 1.5rem;
+  margin-left: 1.25rem;
   &::before {
     @apply absolute pin-l pin-t border-2 rounded-full bg-transparent;
     content: '';
-    margin-left: -1.5rem;
-    width: 18px;
-    height: 18px;
-    margin-top: 5.5px;
+    margin-left: -1.25rem;
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
     transition: 200ms ease-in-out;
   }
 }
@@ -155,5 +164,23 @@ button {
     .arrow-dot {
       margin-left: 79.48834%;
     }
+  }
+}
+
+.col-reverse-mobile {
+  flex-direction: column-reverse;
+}
+
+.row-reverse-mobile {
+  flex-direction: row-reverse;
+}
+
+@screen desktop-sm {
+  .col-reverse-mobile {
+    flex-direction: row;
+  }
+
+  .row-reverse-mobile {
+    flex-direction: row;
   }
 }

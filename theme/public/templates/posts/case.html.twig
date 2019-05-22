@@ -9,19 +9,19 @@
   <div class="container">
     <div class="section">
       <div class="row">
-        <div class="col w-7/12 flex flex-col justify-between">
+        <div class="col w-full desktop-sm:w-7/12 flex flex-col justify-between">
           <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
             <h1 class="text-2xl text-red">Mestic Bio Lab</h1>
             <p class="text-2xl indent mb-8">
               Lorem ipsum dolor sit amet, consectetur adipisicing elire.
             </p>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between mb-5">
             <div class="caption">Fashion Innovation</div>
             <div class="caption">2019</div>
           </div>
         </div>
-        <div class="col w-5/12">
+        <div class="col w-full desktop-sm:w-5/12">
           <figure class="figure-p-lg desaturate scroll-saturate">
             <img src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
             <div class="absolute pin overflow-hidden flex justify-end scroll-overlay">
@@ -58,7 +58,7 @@
   {% include "layout/small-slider.html.twig" %}
 
   <div class="container">
-    <div class="section">
+    <div class="section hidden tablet:block">
       <div class="row justify-between">
         <div class="col">
           <a class="flex items-end" href="#">
@@ -79,6 +79,32 @@
               color: "grey",
               direction : "right"
             } %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section block tablet:tablet">
+      <div class="row justify-between">
+        <div class="col w-full">
+          <a class="flex items-end justify-end" href="#">
+            <div class="mr-4 text-xl text-grey">
+              STRP Biënale
+            </div>
+            {% include "components/arrow.html.twig" with {
+              color: "grey",
+              direction : "right"
+            } %}
+          </a>
+        </div>
+        <div class="col w-full mt-10">
+          <a class="flex items-end" href="#">
+            {% include "components/arrow.html.twig" with {
+              direction : "left"
+            } %}
+            <div class="ml-4 text-xl text-red ">
+              Back to overview
+            </div>
           </a>
         </div>
       </div>

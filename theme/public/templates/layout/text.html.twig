@@ -1,12 +1,16 @@
 <div class="container">
   <div class="section text-black">
-    <div class="row py-32 items-start">
-      <div class="col w-6/12 mr-1/12">
+    <div class="row desktop-sm:py-32 items-start">
+      {% if header %}
+      
+      <div class="col w-10/12 desktop-sm:w-6/12 mr-1/12 mb-5 desktop-sm:mb-0">
         <h2>
           {{ header }}
         </h2>
       </div>
-      <div class="col w-5/12">
+
+      {% endif %}
+      <div class="col w-full tablet:w-8/12 desktop-sm:w-5/12">
         <p>
           In nature nothing is considered waste. Yet manure, in its essence, is easily considered the most vile substance we know. ‘Mestic’ shows that even this most disgusting matter is inherently beautiful.
         </p>

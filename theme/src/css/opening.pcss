@@ -1,21 +1,33 @@
 .scroll-size-left {
-  width: 58.33333%;
+  width: 100%;
   margin-right: 0;
   transition: margin 800ms ease-out, width 800ms ease-out;
 
   &.active {
-    width: 50%;
-    margin-right: 8.33333%
+    width: 100%;
+    margin-right: 0%
   }
 }
 
-.scroll-size-right {
-  .figure-p-lg:after {
-    transition: padding 800ms ease-out;
+
+@screen desktop-sm {
+  .scroll-size-left {
+    width: 58.33333%;
+
+    &.active {
+      width: 50%;
+      margin-right: 8.33333%
+    }
   }
-  &.active {
+  
+  .scroll-size-right {
     .figure-p-lg:after {
-      padding-top: 100%;
+      transition: padding 800ms ease-out;
+    }
+    &.active {
+      .figure-p-lg:after {
+        padding-top: 100%;
+      }
     }
   }
 }
