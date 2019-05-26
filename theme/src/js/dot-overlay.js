@@ -1,4 +1,4 @@
-import * as P5 from 'p5'
+import * as P5 from 'p5/lib/p5.min.js'
 import { EventBus } from './event-bus'
 
 const containers = Array.from(document.querySelectorAll('.canvas-container'))
