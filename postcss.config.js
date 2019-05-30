@@ -37,7 +37,7 @@ module.exports = ({ options }) => ({
     'postcss-advanced-variables': {},
     'tailwindcss': 'tailwind.js',
     'autoprefixer': {},
-    '@fullhuman/postcss-purgecss': options.purgecss,
+    // '@fullhuman/postcss-purgecss': options.purgecss,
     'cssnano': options.cssnano
   }
 })

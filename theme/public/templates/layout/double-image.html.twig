@@ -2,10 +2,14 @@
   <div class="section">
     <div class="row">
       <div class="col w-full desktop-sm:w-6/12 desktop-sm:mr-1/12">
-        <figure class="figure-p-sm bg-grey"></figure>
+        <figure class="figure-p-sm">
+          <img{{ images.left|get_timber_image_responsive('portrait-50vw') }}>
+        </figure>
       </div>
       <div class="col desktop-sm:mt-0 mt-5  w-full desktop-sm:w-5/12 desktop-sm:mt-1/12">
-        <figure class="figure-sq bg-black"></figure>
+        <figure class="figure-sq">
+          <img{{ images.right|get_timber_image_responsive('portrait-50vw') }}>
+        </figure>
       </div>
     </div>
   </div>

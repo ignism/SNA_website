@@ -8,10 +8,17 @@
 
 {% block main %}
 
-  {% include "layout/case-tease.html.twig" %}
-    <div class="dotted-line"></div>
-  {% include "layout/case-tease.html.twig" %}
-    <div class="dotted-line"></div>
-  {% include "layout/case-tease.html.twig" %}
+  {% for item in page.meta('case_items') %}
+    
+    {% include "layout/case-tease.html.twig" with { 
+      case: item.post,
+      case_index: loop.index0
+    } %}
+    
+    {% if loop.index < loop.length %}
+      <div class="dotted-line"></div>
+    {% endif %}
+
+  {% endfor %}
 
 {% endblock %}

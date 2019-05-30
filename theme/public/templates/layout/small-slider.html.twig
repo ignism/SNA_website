@@ -17,7 +17,7 @@
             } %}
           </div>
         </div>
-        <div class="swiper-count">1/4</div>
+        <div class="swiper-count">1/{{ slides|length }}</div>
       </div>
 
       <div class="col w-full desktop-sm:w-5/12">
@@ -25,21 +25,15 @@
           <div class="swiper-container">
             <div class="swiper-wrapper">
 
-              <div class="swiper-slide">
-                <figure class="figure-p-lg bg-grey"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                <figure class="figure-p-lg bg-red"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                <figure class="figure-p-lg bg-black"></figure>
-              </div>
-
-              <div class="swiper-slide">
-                <figure class="figure-p-lg bg-red"></figure>
-              </div>
+              {% for slide in slides %}
+                
+                <div class="swiper-slide">
+                  <figure class="figure-p-lg bg-grey">
+                    <img{{ slide.image|get_timber_image_responsive('portrait-50vw') }}>
+                  </figure>
+                </div>
+              
+              {% endfor %}
 
             </div>
           </div>

@@ -3,6 +3,7 @@
 require_once __DIR__.'/vendor/autoload.php';
 
 $timber = new Timber\Timber();
+$timmy = new Timmy\Timmy();
 
 if (!class_exists('Timber')) {
     add_action('admin_notices', function () {
@@ -34,6 +35,7 @@ class Suna extends Timber\Site
         add_action('after_setup_theme', array($this, 'theme_supports'));
         add_filter('timber_context', array($this, 'add_to_context'));
         add_filter('get_twig', array($this, 'add_to_twig'));
+        add_filter('timmy/sizes', array($this, 'timmy_sizes'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_advanced_custom_fields'));
         add_action('init', array($this, 'register_taxonomies'));
@@ -68,6 +70,40 @@ class Suna extends Timber\Site
         $context['site'] = $this;
 
         return $context;
+    }
+
+    public function timmy_sizes($sizes)
+    {
+        return array(
+            'portrait-50vw' => array(
+                'resize' => array( 800, 1010 ),
+                'srcset' => array( 0.5, 2, 3 ),
+                'sizes' => '(min-width: 640px) 50vw, 100vw',
+                'width' => '100%',
+                'oversize' => array(
+                    'allow'      => false,
+                    'style_attr' => false,
+                ),
+            ),
+            'square-50vw' => array(
+                'resize' => array( 800, 800 ),
+                'srcset' => array( 0.5, 2, 3 ),
+                'sizes' => '(min-width: 640px) 50vw, 100vw',
+                'oversize' => array(
+                    'allow'      => false,
+                    'style_attr' => false,
+                ),
+            ),
+            'landscape-100vw' => array(
+                'resize' => array( 1600, 888 ),
+                'srcset' => array( 0.5, 2, 3 ),
+                'sizes' => '100vw',
+                'oversize' => array(
+                    'allow'      => false,
+                    'style_attr' => false,
+                ),
+            ),
+        );
     }
 
     public function theme_supports()
@@ -118,6 +154,8 @@ class Suna extends Timber\Site
             )
         );
         add_theme_support('menus');
+
+        set_post_thumbnail_size( 0, 0 );
     }
 
     /** This Would return 'foo bar!'.
@@ -148,6 +186,7 @@ class Suna extends Timber\Site
         wp_enqueue_style('theme', get_template_directory_uri() . '/css/theme.css');
         wp_enqueue_style('fonts', get_template_directory_uri() . '/css/fonts.css');
         wp_enqueue_script('theme', get_template_directory_uri() . '/js/theme.js', array(), '1.0.0', true);
+        wp_enqueue_script('head', get_template_directory_uri() . '/js/head.js', array(), '1.0.0', false);
     }
 }
 new Suna();

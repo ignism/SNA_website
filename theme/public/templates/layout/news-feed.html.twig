@@ -11,24 +11,30 @@
 
         <div class="swiper-wrapper">
 
-          <div class="swiper-slide">
-            <div class="w-full">
-              <div class="row desktop-sm:flex-no-wrap">
-                <div class="col w-full desktop-sm:w-6/12">
-                  <figure class="figure-p-lg bg-black"></figure>
-                </div>
-                <div class="col w-full desktop-sm:w-5/12 desktop-sm:ml-1/12">
-                  <div class="py-5 desktop-sm:flex justify-between text-lg desktop-sm:pb-10 desktop-sm:pt-0">
-                    <div>17-02-2007</div>
-                    <div>Dutch Design Week</div>
+          {% for item in items %}
+            
+            <div class="swiper-slide">
+              <div class="w-full">
+                <div class="row desktop-sm:flex-no-wrap">
+                  <div class="col w-full desktop-sm:w-6/12">
+                    <figure class="figure-p-lg bg-black">
+                      <img{{ item.post.meta('image')|get_timber_image_responsive('portrait-50vw') }}>
+                    </figure>
                   </div>
-                  <p class="text-black">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis mollitia ex nulla laboriosam error animi ad totam veniam doloremque architecto ab, labore possimus id, fugit quos tempora quod iusto ut.
-                  </p>
+                  <div class="col w-full desktop-sm:w-5/12 desktop-sm:ml-1/12">
+                    <div class="py-5 desktop-sm:flex justify-between text-lg desktop-sm:pb-10 desktop-sm:pt-0">
+                      <div>{{ item.post.meta('date') }}</div>
+                      <div>{{ item.post.meta('category') }}</div>
+                    </div>
+                    <p class="text-black">
+                      {{ item.post.meta('text') }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+
+          {% endfor %}
 
         </div>
 

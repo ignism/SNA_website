@@ -17,7 +17,8 @@ module.exports = (env, options) => {
   }
   return ({
     entry: { 
-      theme: './theme/src/index.js' 
+      theme: './theme/src/index.js',
+      head: './theme/src/head.js',
     },
     output: {
       path: path.resolve(__dirname, 'wp-content/themes/', config.slug),
@@ -29,7 +30,10 @@ module.exports = (env, options) => {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            // options: {
+            //   presets: ['@babel/preset-env']
+            // }
           }
         },
         {

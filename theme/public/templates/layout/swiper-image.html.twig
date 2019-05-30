@@ -6,13 +6,17 @@
         <div class="swiper-container">
 
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <figure class="figure-l bg-black"></figure>
-            </div>
 
-            <div class="swiper-slide">
-              <figure class="figure-l bg-red"></figure>
-            </div>
+            {% for slide in slides %}
+              
+              <div class="swiper-slide">
+                <figure class="figure-l">
+                  <img{{ slide.image|get_timber_image_responsive('landscape-100vw') }}>
+                </figure>
+              </div>
+
+            {% endfor %}
+
           </div>
 
           <div class="flex items-center justify-between mt-5">

@@ -1,5 +1,5 @@
 import 'swiper/dist/css/swiper.css'
-import Swiper from 'swiper'
+import Swiper from 'swiper/dist/js/swiper.js'
 
 document.addEventListener('DOMContentLoaded', (event) => {
   let swipers = Array.from(document.getElementsByClassName('swiper-section'))

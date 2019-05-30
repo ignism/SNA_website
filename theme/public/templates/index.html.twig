@@ -15,7 +15,7 @@
                 <span class="logo">Suna.</span>
               </a>
               <span class="scroll-out">
-                is a production house for innovative events focusing specifically on the field of culture, knowledge, art and design.
+                {{ page.header_text }}
               </span>
             </h2>
           </div>
@@ -71,8 +71,12 @@
     link: 'About us'
   } %}
 
-  {% include "layout/portfolio.html.twig" %}
+  {% include "layout/portfolio.html.twig" with {
+    items: page.meta('case_items')
+  } %}
 
-  {% include "layout/news-feed.html.twig" %}
+  {% include "layout/news-feed.html.twig" with {
+    items: page.meta('news_items')
+  } %}
 
 {% endblock %}

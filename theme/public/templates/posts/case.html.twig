@@ -11,21 +11,21 @@
       <div class="row">
         <div class="col w-full desktop-sm:w-7/12 flex flex-col justify-between">
           <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
-            <h1 class="text-2xl text-red">Mestic Bio Lab</h1>
+            <h1 class="text-2xl text-red">{{ post.title }}</h1>
             <p class="text-2xl indent mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elire.
+              {{ post.subtitle }}
             </p>
           </div>
-          <div class="flex justify-between mb-5">
-            <div class="caption">Fashion Innovation</div>
-            <div class="caption">2019</div>
+          <div class="flex justify-between mb-5 desktop-sm:mb-0">
+            <div class="caption">{{ post.meta('category') }}</div>
+            <div class="caption">{{ post.meta('year') }}</div>
           </div>
         </div>
         <div class="col w-full desktop-sm:w-5/12">
           <figure class="figure-p-lg desaturate scroll-saturate">
-            <img src="{{ theme.link}}/images/placeholder/4a32a177c737d854d26b492646448b644776a4a7.jpg" alt="">
-            <div class="absolute pin overflow-hidden flex justify-end scroll-overlay">
-              <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_right_grey_dot_pattern_4.svg" alt="">
+            <img{{ post.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
+            <div class="absolute pin overflow-hidden flex justify-end">
+              <img class="h-full w-auto" src="{{ theme.link }}/images/dot-pattern/white-right-01.png" alt="">
             </div>
           </figure>
         </div>
@@ -33,35 +33,68 @@
     </div>
   </div>
 
-  {% include "layout/text.html.twig" with {
-    header : "Mestic: innovation<br>inspired by nature"
+  {% for modular_block in post.meta("blocks") %}
+
+    {% set layout = modular_block.acf_fc_layout %}
+
+    {% if layout == "text" %}
+
+      {% include "layout/text.html.twig" with {
+        header : modular_block.left,
+        text: modular_block.right
+      } %}
+
+    {% elseif layout == "full_width_image" %}
+
+      {% include "layout/fw-image.html.twig" with {
+        image: modular_block.image
+      } %}
+
+    {% elseif layout == "double_image" %}
+
+      {% set images = {
+        left: modular_block.left,
+        right: modular_block.right
+      } %}
+      {% include "layout/double-image.html.twig" with {
+        images: images
+      } %}
+
+    {% elseif layout == "keynotes" %}
+
+      {% include "layout/keynote.html.twig" with {
+        slides : modular_block.slides
+      } %}
+
+    {% elseif layout == "movie" %}
+
+      {% include "layout/movie.html.twig" with {
+        vimeo_id : modular_block.vimeo_id
+      } %}
+
+    {% elseif layout == "quote" %}
+
+      {% include "layout/quote.html.twig" with {
+        quotee: modular_block.quotee,
+        text: modular_block.text,
+        image: modular_block.image
+      } %}
+
+    {% elseif layout == "slider" %}
+
+  {% include "layout/small-slider.html.twig" with { 
+    slides: modular_block.slides
   } %}
 
-  {% include "layout/fw-image.html.twig" %}
+    {% endif %}
 
-  {% include "layout/text.html.twig" with {
-    header : ""
-  } %}
-
-  {% include "layout/double-image.html.twig" %}
-
-  {% include "layout/keynote.html.twig" %}
-
-  {% include "layout/movie.html.twig" %}
-
-  {% include "layout/quote.html.twig" %}
-
-  {% include "layout/text.html.twig" with {
-    header : "Spring collection<br>- Summer 2016<br>presentation show"
-  } %}
-
-  {% include "layout/small-slider.html.twig" %}
+  {% endfor %}
 
   <div class="container">
     <div class="section hidden tablet:block">
       <div class="row justify-between">
         <div class="col">
-          <a class="flex items-end" href="#">
+          <a class="flex items-end" href="{{ site.link }}/portfolio">
             {% include "components/arrow.html.twig" with {
               direction : "left"
             } %}
@@ -71,34 +104,34 @@
           </a>
         </div>
         <div class="col">
-          <a class="flex items-end" href="#">
+          <a class="flex items-end" href="{{ next_post.link }}">
             <div class="mr-4 text-xl text-grey">
-              STRP Biënale
+              {{ next_post.title }}
             </div>
             {% include "components/arrow.html.twig" with {
-              color: "grey",
-              direction : "right"
+              color : "grey",
+              direction: "right"
             } %}
           </a>
         </div>
       </div>
     </div>
 
-    <div class="section block tablet:tablet">
+    <div class="section block tablet:hidden">
       <div class="row justify-between">
         <div class="col w-full">
-          <a class="flex items-end justify-end" href="#">
+          <a class="flex items-end justify-end" href="{{ next_post.link }}">
             <div class="mr-4 text-xl text-grey">
-              STRP Biënale
+              {{ next_post.title }}
             </div>
             {% include "components/arrow.html.twig" with {
-              color: "grey",
-              direction : "right"
+              color : "grey",
+              direction: "right"
             } %}
           </a>
         </div>
         <div class="col w-full mt-10">
-          <a class="flex items-end" href="#">
+          <a class="flex items-end" href="{{ site.link }}/portfolio">
             {% include "components/arrow.html.twig" with {
               direction : "left"
             } %}

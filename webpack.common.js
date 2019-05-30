@@ -10,14 +10,14 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = {
   plugins: [
-    new CleanWebpackPlugin(path.resolve(__dirname, 'wp-content/themes', config.slug)),
-    new CopyWebpackPlugin([{
-      from: 'theme/public',
-      to: ''
-    }, {
-      from: 'theme/vendor',
-      to: 'vendor'
-    }]),
+    // new CleanWebpackPlugin(path.resolve(__dirname, 'wp-content/themes', config.slug)),
+    // new CopyWebpackPlugin([{
+    //   from: 'theme/public',
+    //   to: ''
+    // }, {
+    //   from: 'theme/vendor',
+    //   to: 'vendor'
+    // }]),
     // new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -64,26 +64,23 @@ module.exports = {
       test: /\.js$/
     }, {
       test: /\.(css|pcss)$/,
-
-      use: [{
-        loader: MiniCssExtractPlugin.loader,
-        options: {
-          publicPath: (resourcePath, context) => {
-            // publicPath is the relative path of the resource to the context
-            // e.g. for ./css/admin/main.css the publicPath will be ../../
-            // while for ./css/main.css the publicPath will be ../
-            return path.relative(path.dirname(resourcePath), context) + '/'
-          }
-        }
-      }, {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          sourceMap: true
-        }
-      }, {
-        loader: 'postcss-loader'
-      }]
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+        },
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          // options: {
+          //   config: {
+          //     ctx: {
+          //       purgecss: options.mode === 'production' ? { content: ['./theme/public/templates/**/*.twig'] } : false,
+          //       cssnano: options.mode === 'production' ? {} : false
+          //     }
+          //   }
+          // }
+        },
+      ]
     }, {
       test: /\.(svg|png|jpg)$/,
 

@@ -11,22 +11,22 @@
       <div class="row">
         <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
           <figure class="figure-p-sm bg-grey">
-            <img class="desaturate scroll-saturate" src="{{ theme.link }}/images/placeholder/presentation.jpg" alt="">
+            <img class="desaturate scroll-saturate"{{ page.meta('header_images').left|get_timber_image_responsive('portrait-50vw') }}>
             <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
           </figure>
           <div class="flex justify-between my-5">
-            <div class="text-lg text-black">Suna Karaca</div>
-            <div class="text-lg text-black">Founder</div>
+            <div class="text-lg text-black">{{ page.meta('header_images').left_caption.left }}</div>
+            <div class="text-lg text-black">{{ page.meta('header_images').left_caption.right }}</div>
           </div>
         </div>
         <div class="col scroll-size scroll-size-right w-full desktop-sm:w-5/12 mt-1/12">
           <figure class="figure-p-lg bg-grey">
-            <img class="desaturate scroll-saturate" src="{{ theme.link }}/images/placeholder/4ad728a1dfd72b6332e1dfb1c20e4147ce4feb32.jpg" alt="">
+            <img class="desaturate scroll-saturate"{{ page.meta('header_images').right|get_timber_image_responsive('portrait-50vw') }}>
             <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
           </figure>
           <div class="flex justify-between my-5">
-            <div class="text-lg text-black">Suna Karaca</div>
-            <div class="text-lg text-black">Founder</div>
+            <div class="text-lg text-black">{{ page.meta('header_images').right_caption.left }}</div>
+            <div class="text-lg text-black">{{ page.meta('header_images').right_caption.right }}</div>
           </div>
         </div>
       </div>
@@ -39,11 +39,15 @@
   } %}
 
   {% include "layout/swiper-image.html.twig" with { 
-    link: ''
+    slides: page.meta('image_slides')
   } %}
 
-  {% include "layout/keynote.html.twig" %}
+  {% include "layout/keynote.html.twig" with { 
+    slides: page.meta('keynote_slides')
+  } %}
 
-  {% include "layout/double-image.html.twig" %}
+  {% include "layout/double-image.html.twig" with {
+    images: page.meta('images')
+  } %}
 
 {% endblock %}

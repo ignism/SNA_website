@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "928d1ed728a60ddd63d2f2d7ef2a46b2",
+    "content-hash": "8efe29abac2bda4a23f045f9a929bd2d",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -230,6 +230,56 @@
                 "zikula"
             ],
             "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "mindkomm/timmy",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindkomm/timmy.git",
+                "reference": "481c0fb7841d93fadaa2ad4e4832207cf3df038b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindkomm/timmy/zipball/481c0fb7841d93fadaa2ad4e4832207cf3df038b",
+                "reference": "481c0fb7841d93fadaa2ad4e4832207cf3df038b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0",
+                "timber/timber": "^1.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Timmy\\": "lib/"
+                },
+                "files": [
+                    "functions-images.php",
+                    "functions-deprecated.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Gaechter",
+                    "email": "lukas.gaechter@mind.ch",
+                    "homepage": "https://www.mind.ch"
+                }
+            ],
+            "description": "Advanced image manipulation for Timber.",
+            "keywords": [
+                "images",
+                "responsive",
+                "timber",
+                "timmy",
+                "wordpress"
+            ],
+            "time": "2018-10-08T18:44:26+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

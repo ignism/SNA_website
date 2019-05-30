@@ -1,3 +1,5 @@
+import '@babel/polyfill'
+
 import './js/loader.js'
 import './js/swiper.js'
 import './js/footer.js'

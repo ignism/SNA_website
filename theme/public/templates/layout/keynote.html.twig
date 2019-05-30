@@ -4,68 +4,32 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide keynote">
-          <div class="flex flex-no-wrap justify-between">
-            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
-              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
-                01.
-              </div>
-              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
-                <div>
-                  <h2 class="text-red">Mestic Bio Lab</h2>
-                  <p class="text-xl indent mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elire.
-                  </p>
+        {% for slide in slides %}
+          
+          <div class="swiper-slide keynote">
+            <div class="flex flex-no-wrap justify-between">
+              <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
+                <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
+                  0{{ loop.index }}.
+                </div>
+                <div class="text-xl relative desktop-sm:absolute pin flex items-center">
+                  <div>
+                    <h2 class="text-red">{{ slide.highlighted_text }}</h2>
+                    <p class="text-xl indent mb-8">
+                      {{ slide.sub_text }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="hidden desktop-sm:block w-5/12">
-              <figure class="figure-p-xs bg-grey"></figure>
+              <div class="hidden desktop-sm:block w-5/12">
+                <figure class="figure-p-xs">
+                  <img{{ slide.image|get_timber_image_responsive('portrait-50vw') }}>
+                </figure>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="swiper-slide keynote">
-          <div class="flex flex-no-wrap justify-between">
-            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
-              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
-                02.
-              </div>
-              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
-                <div>
-                  <h2 class="text-red">Ispum dolor</h2>
-                  <p class="text-xl indent mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elire.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="hidden desktop-sm:block w-5/12">
-              <figure class="figure-p-xs bg-red"></figure>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide keynote">
-          <div class="flex flex-no-wrap justify-between">
-            <div class="w-full tablet:w-8/12 desktop-sm:w-5/12 desktop-sm:mr-2/12 relative">
-              <div class="text-3xl text-red relative mb-10 desktop-sm:absolute pin-t pin-l">
-                03.
-              </div>
-              <div class="text-xl relative desktop-sm:absolute pin flex items-center">
-                <div>
-                  <h2 class="text-red">Lorem</h2>
-                  <p class="text-xl indent mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elire.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="hidden desktop-sm:block w-5/12">
-              <figure class="figure-p-xs bg-black"></figure>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
       </div>
 
@@ -88,18 +52,14 @@
     <div class="h-16 w-full relative mt-8">
       <div class="absolute pin z-10">
         <ul class="swiper-custom-pagination list-reset w-full flex justify-between items-center">
-          <li class="pagination-item crumb active" data-swiper-target="1">
-            <div class="indicator"></div>
-            <div>01</div>
-          </li>
-          <li class="pagination-item crumb" data-swiper-target="2">
-            <div class="indicator"></div>
-            <div>02</div>
-          </li>
-          <li class="pagination-item crumb" data-swiper-target="3">
-            <div class="indicator"></div>
-            <div>03</div>
-          </li>
+          {% for slide in slides %}
+            
+            <li class="pagination-item crumb{% if loop.index == 1 %} active{% endif %}" data-swiper-target="{{ loop.index }}">
+              <div class="indicator"></div>
+              <div>0{{ loop.index }}</div>
+            </li>
+
+          {% endfor %}
         </ul>
       </div>
       <div class="absolute pin z-0">
