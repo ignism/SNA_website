@@ -15,6 +15,11 @@
   animation: fadeIn 400ms ease-in-out forwards;
 }
 
+.long {
+  transition-duration: 1600ms !important;
+  animation-duration: 1600ms !important;
+  }
+
 .desaturate {
   filter: saturate(0);
   transition: filter 400ms ease;
@@ -24,6 +29,11 @@
   filter: saturate(1);
 }
 
+.hover .hover-saturate {
+  filter: saturate(1);
+}
+
+.hover .hover\:saturate,
 .hover\:saturate:hover {
   filter: saturate(1);
 }

@@ -58,8 +58,11 @@
             </div>
           </div>
           {% if link %}
+              <a href="{{ link_url }}">
             <div class="mt-24 text-xl text-red flex justify-end items-center">
-              <div class="mr-4">{{ link }}</div>{% include "components/cross.html.twig" %}</div>
+                <div class="mr-4">{{ link }}</div>{% include "components/cross.html.twig" %}
+            </div>
+              </a>
           {% endif %}
 
         </div>
@@ -146,7 +149,6 @@
                 <span class="highlight">{{ page.meta('usp')[3].highlighted_text }}</span>
                 {{ page.meta('usp')[3].remaining_text }}
               </p>
-              <div class="dotted-line mb-5"></div>
             </div>
           </li>
         </ul>

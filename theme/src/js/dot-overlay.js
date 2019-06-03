@@ -70,9 +70,10 @@ EventBus.$once('init', () => {
 EventBus.$once('scrolled', () => {
   containers.forEach(container => {
     container.classList.add('fade-out')
+    container.classList.add('long')
 
     setTimeout(() => {
-      container.parentElement.removeChild(container)
-    }, 500)
+      // container.parentElement.removeChild(container)
+    }, 2000)
   })
 })

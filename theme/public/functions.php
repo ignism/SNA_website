@@ -34,13 +34,31 @@ class Suna extends Timber\Site
     {
         add_action('after_setup_theme', array($this, 'theme_supports'));
         add_filter('timber_context', array($this, 'add_to_context'));
+        // add_action( 'widgets_init', 'footer_widgets_init' );
         add_filter('get_twig', array($this, 'add_to_twig'));
         add_filter('timmy/sizes', array($this, 'timmy_sizes'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_advanced_custom_fields'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ));
+        add_action( 'widgets_init', array($this, 'custom_widgets_init'));
         parent::__construct();
+    }
+
+    public function custom_widgets_init() {
+
+        register_sidebar(
+            array(
+                'name'          => __( 'Footer', 'twentynineteen' ),
+                'id'            => 'sidebar-1',
+                'description'   => __( 'Add widgets here to appear in your footer.', 'twentynineteen' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h2 class="widget-title">',
+                'after_title'   => '</h2>',
+            )
+        );
+    
     }
 
     /** This is where you can register custom post types. */
@@ -190,3 +208,17 @@ class Suna extends Timber\Site
     }
 }
 new Suna();
+
+// function sentinel_widgets_init() {
+
+//     register_sidebar( array(
+//         'name'          => 'Home Sidebar',
+//         'id'            => 'home_sidebar',
+//         'before_widget' => '<div>',
+//         'after_widget'  => '</div>',
+//         'before_title'  => '<h2 class="rounded">',
+//         'after_title'   => '</h2>',
+//     ) );
+
+// }
+// add_action( 'widgets_init', 'sentinel_widgets_init' );

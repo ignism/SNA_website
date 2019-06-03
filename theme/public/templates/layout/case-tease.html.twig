@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section">
   
-      <div class="row">
+      <div class="row catch-hover-wrapper">
         <div class="col w-full desktop-sm:w-7/12 flex flex-col justify-between">
           <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
             <a class="catch-hover" href="{{ case.link }}">
@@ -37,13 +37,13 @@
             <div class="caption">{{ case.meta('year') }}</div>
           </div>
         </div>
-        <div class="col w-full desktop-sm:w-5/12">
+        <div class="col w-full desktop-sm:w-5/12 catch-hover">
           <a href="{{ case.link }}">
-            <figure class="desaturate hover:saturate figure-p-lg bg-grey">
+            <figure class="desaturate hover-saturate figure-p-lg bg-grey">
               <img{{ case.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
               <div class="absolute pin overflow-hidden flex justify-start">
                 {% set dot_index = (case_index % 2) + 1 %}
-                <img class="h-full w-auto" src="{{ theme.link }}/images/dot-pattern/gray-right-0{{ dot_index }}.png" alt="">
+                <img class="h-full" src="{{ theme.link }}/images/dot-pattern/gray-right-0{{ dot_index }}.png" alt="">
               </div>
             </figure>
           </a>

@@ -1,44 +1,45 @@
-<div class="container bg-grey-light">
-  <div class="section swiper-section hidden desktop-sm:block" data-effect="fade">
+<div class="bg-grey-light">
+  <div class="container">
+    <div class="section swiper-section hidden desktop-sm:block" data-effect="fade" style="padding-bottom: 20px">
 
-    <div class="row items-stretch">
-      <div class="col self-auto w-7/12 relative">
-        <ul class="swiper-custom-pagination list-reset">
+      <div class="row items-stretch">
+        <div class="col self-auto w-7/12 relative">
+          <ul class="swiper-custom-pagination list-reset">
 
-          {% for item in items %}
+            {% for item in items %}
 
-            <li class="pagination-item trigger-hover{% if loop.index == 1 %} active{% endif %}" data-swiper-target="{{ loop.index }}" data-label-left="{{ item.post.meta('category') }}" data-label-right="{{ item.post.meta('year') }}">
-              <a href="{{ item.post.link }}">
-                <h1 class="text-2xl">{{ item.post.title }}
-                  <span class="superscript">0{{ loop.index }}</span></h1>
-              </a>
-            </li>
+              <li class="pagination-item trigger-hover{% if loop.index == 1 %} active{% endif %}" data-swiper-target="{{ loop.index }}" data-label-left="{{ item.post.meta('category') }}" data-label-right="{{ item.post.meta('year') }}">
+                <a href="{{ item.post.link }}">
+                  <h1 class="text-2xl">{{ item.post.title }}
+                    <span class="superscript">0{{ loop.index }}</span></h1>
+                </a>
+              </li>
 
-          {% endfor %}
+            {% endfor %}
 
-        </ul>
-        <div class="absolute col w-full pin-l pin-b">
-          <div class="swiper-label flex justify-between w-full">
-            <div class="label-left text-black caption">{{ items[0].post.meta('category') }}</div>
-            <div class="label-right text-black caption">{{ items[0].post.meta('year') }}</div>
+          </ul>
+          <div class="absolute col w-full pin-l pin-b">
+            <div class="swiper-label flex justify-between w-full">
+              <div class="label-left text-black caption">{{ items[0].post.meta('category') }}</div>
+              <div class="label-right text-black caption">{{ items[0].post.meta('year') }}</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col w-5/12">
-        <div class="w-full">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <div class="col w-5/12">
+          <div class="w-full">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
 
-              {% for item in items %}
+                {% for item in items %}
 
-                <div class="swiper-slide">
-                  <figure class="figure-p-lg">
-                    <img class="desaturate"{{ item.post.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
-                    <div class="absolute pin overflow-hidden flex justify-start">
-                      {% set dot_index = (loop.index0 % 2) + 1 %}
-                      <img class="h-full w-auto" src="{{ theme.link }}/images/dot-pattern/gray-left-0{{ dot_index }}.png" alt="">
-                    </div>  
-                  </figure>
+                  <div class="swiper-slide">
+                    <figure class="figure-p-lg">
+                      <img class="desaturate" {{ item.post.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
+                      <div class="absolute pin overflow-hidden flex justify-start">
+                        {% set dot_index = (loop.index0 % 2) + 1 %}
+                        <img class="h-full w-auto" src="{{ theme.link }}/images/dot-pattern/gray-left-0{{ dot_index }}.png" alt="">
+                      </div>
+                    </figure>
                   </div>
 
                 {% endfor %}
@@ -56,12 +57,12 @@
       </div>
     </div>
 
-    <div class="section block desktop-sm:hidden">
+    <div class="section block desktop-sm:hidden" style="padding-bottom: 10px">
 
       {% for item in items %}
         {# Case tease repeat #}
-        <div class="row">
-          <div class="col w-full flex flex-col justify-between">
+        <div class="row py-5 catch-hover-wrapper">
+          <div class="col w-full flex flex-col justify-between {% if loop.index != 1 %}{% endif %}">
             <div class="w-full">
               <a class="catch-hover" href="{{ item.post.link }}">
                 <div class="flex justify-between items-end mb-10">
@@ -84,18 +85,27 @@
               <div class="caption">{{ item.post.year }}</div>
             </div>
           </div>
-          <div class="col w-full">
-            <a href="#">
-              <figure class="figure-p-lg bg-grey">
-                <img{{ item.post.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
+          <div class="col w-full catch-hover catch-hover">
+            <a href="{{ item.post.link }}">
+              <figure class="desaturate hover-saturate figure-p-lg bg-grey">
+                <img class="" {{ item.post.meta('splash_image')|get_timber_image_responsive('portrait-50vw') }}>
                 <div class="absolute pin overflow-hidden flex justify-start">
-                  <img class="h-full w-auto" src="{{ theme.link }}/images/SNA_left_grey_dot_pattern_2.svg" alt="">
+                  {% set dot_index = (loop.index0 % 2) + 1 %}
+                  <img class="h-full w-auto" src="{{ theme.link }}/images/dot-pattern/gray-left-0{{ dot_index }}.png" alt="">
                 </div>
               </figure>
             </a>
           </div>
         </div>
-    {% endfor %}
+              <div class="dotted-line"></div>
+      {% endfor %}
     </div>
     {#  #}
+
+    <a href="{{ site.link }}/portfolio">
+      <div class="pt-5 pb-10 text-xl text-red flex justify-end items-center">
+        <div class="mr-4">See all cases</div>{% include "components/cross.html.twig" %}
+      </div>
+    </a>
   </div>
+</div>

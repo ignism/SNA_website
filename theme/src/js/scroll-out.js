@@ -39,6 +39,10 @@ if (resizers.length > 0) {
   function onScroll(event) {
     resizers.forEach((resizer) => {
       resizer.classList.add('active')
+
+      setTimeout(() => {
+        resizer.style.transition = 'none'
+      }, 2000)
     })
 
     window.removeEventListener('scroll', onScroll)

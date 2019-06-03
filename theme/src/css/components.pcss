@@ -48,6 +48,7 @@ button {
   &::before {
     @apply border-red;
   }
+  &:hover::before,
   &.active::before {
     @apply bg-red;
   }
@@ -60,6 +61,10 @@ button {
   &.active::before {
     @apply bg-white;
   }
+}
+
+.text-xl .dot-white::before {
+  margin-top:8px
 }
 
 @screen desktop-sm {

@@ -1,7 +1,11 @@
+$short: 400ms;
+$medium: 800ms;
+$long: 1600ms;
+
 .scroll-size-left {
   width: 100%;
   margin-right: 0;
-  transition: margin 800ms ease-out, width 800ms ease-out;
+  transition: margin $long ease-out, width $long ease-out;
 
   &.active {
     width: 100%;
@@ -22,7 +26,7 @@
   
   .scroll-size-right {
     .figure-p-lg:after {
-      transition: padding 800ms ease-out;
+      transition: padding $long ease-out;
     }
     &.active {
       .figure-p-lg:after {
@@ -34,7 +38,7 @@
 
 .scroll-color {
   @apply bg-grey-light;
-  transition: background-color 800ms ease;
+  transition: background-color $medium ease;
 
   &.active {
     @apply bg-white;
@@ -43,7 +47,7 @@
 
 .scroll-out {
   opacity: 1;
-  transition: opacity 800ms ease;
+  transition: opacity $medium ease;
   
   &.active {
     opacity: 0;

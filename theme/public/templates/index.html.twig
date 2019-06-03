@@ -10,7 +10,7 @@
       <nav class="nav pt-10 pb-2">
         <div class="row justify-between items-end">
           <div class="col">
-            <h2>
+            <h2 class="logo-mobile-correction">
               <a class="text-red" href="{{site.link}}">
                 <span class="logo">Suna.</span>
               </a>
@@ -48,7 +48,7 @@
               {% include "components/burger.html.twig" %}
             </div>
           </div>
-          <ul class="absolute pin-b pin-l flex nav-items list-reset text-lg">
+          <ul class="absolute pin-b pin-l flex nav-items list-reset text-xl">
             <li class="nav-item mobile dot-white {% if about_active %}active{% endif %}">
               <a class="text-white" href="{{ site.link }}/about">About</a>
             </li>
@@ -68,7 +68,8 @@
   {% include "layout/landing.html.twig" %}
 
   {% include "layout/swiper-text.html.twig" with {
-    link: 'About us'
+    link: 'About us',
+    link_url: site.link ~ '/about'
   } %}
 
   {% include "layout/portfolio.html.twig" with {

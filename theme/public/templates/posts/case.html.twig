@@ -120,7 +120,7 @@
     <div class="section block tablet:hidden">
       <div class="row justify-between">
         <div class="col w-full">
-          <a class="flex items-end justify-end" href="{{ next_post.link }}">
+          <a class="flex items-center justify-between" href="{{ next_post.link }}">
             <div class="mr-4 text-xl text-grey">
               {{ next_post.title }}
             </div>
@@ -131,7 +131,7 @@
           </a>
         </div>
         <div class="col w-full mt-10">
-          <a class="flex items-end" href="{{ site.link }}/portfolio">
+          <a class="flex items-center justify-between" href="{{ site.link }}/portfolio">
             {% include "components/arrow.html.twig" with {
               direction : "left"
             } %}
