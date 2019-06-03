@@ -34,12 +34,12 @@ class Suna extends Timber\Site
     {
         add_action('after_setup_theme', array($this, 'theme_supports'));
         add_filter('timber_context', array($this, 'add_to_context'));
-        // add_action( 'widgets_init', 'footer_widgets_init' );
         add_filter('get_twig', array($this, 'add_to_twig'));
         add_filter('timmy/sizes', array($this, 'timmy_sizes'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_advanced_custom_fields'));
         add_action('init', array($this, 'register_taxonomies'));
+        add_action('admin_enqueue_scripts', array( $this, 'load_admin_scripts' ));
         add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ));
         add_action( 'widgets_init', array($this, 'custom_widgets_init'));
         parent::__construct();
@@ -83,9 +83,22 @@ class Suna extends Timber\Site
      */
     public function add_to_context($context)
     {
-        $context['value'] = 'I am a value set in your functions.php file';
-        $context['menu'] = new Timber\Menu();
         $context['site'] = $this;
+        
+        $context['menu'] = new Timber\Menu();
+
+        $widgets = Timber::get_posts(array(
+            'post_type' => 'widget', // Get post type project
+            'posts_per_page' => -1, // Get all posts
+        ));
+
+        $context['widgets'] = $widgets;
+
+        foreach ($widgets as $widget) {
+            if ($widget->post_name == 'footer') {
+                $context['footer_widget'] = $widget;
+            }
+        }
 
         return $context;
     }
@@ -199,8 +212,14 @@ class Suna extends Timber\Site
         return $twig;
     }
 
+    public function load_admin_scripts()
+    {
+        wp_enqueue_style( 'admin', get_template_directory_uri() .'/css/admin.css', array(), false, 'all' );
+    }
+
     public function load_scripts()
     {
+        wp_enqueue_style('fonts', get_template_directory_uri() . '/css/fonts.css');
         wp_enqueue_style('theme', get_template_directory_uri() . '/css/theme.css');
         wp_enqueue_style('fonts', get_template_directory_uri() . '/css/fonts.css');
         wp_enqueue_script('theme', get_template_directory_uri() . '/js/theme.js', array(), '1.0.0', true);
@@ -208,17 +227,3 @@ class Suna extends Timber\Site
     }
 }
 new Suna();
-
-// function sentinel_widgets_init() {
-
-//     register_sidebar( array(
-//         'name'          => 'Home Sidebar',
-//         'id'            => 'home_sidebar',
-//         'before_widget' => '<div>',
-//         'after_widget'  => '</div>',
-//         'before_title'  => '<h2 class="rounded">',
-//         'after_title'   => '</h2>',
-//     ) );
-
-// }
-// add_action( 'widgets_init', 'sentinel_widgets_init' );

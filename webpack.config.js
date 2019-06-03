@@ -3,6 +3,7 @@ const glob = require('glob')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = require(path.resolve(__dirname, 'config/theme.json'))
 
@@ -69,6 +70,7 @@ module.exports = (env, options) => {
       ]
     },
     plugins: [
+      new BundleAnalyzerPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css',
         chunkFilename: 'css/[id].css',
