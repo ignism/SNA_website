@@ -5,7 +5,8 @@
         <span class="text-lg mr-8">{{ quotee }}</span>
         <quote class="text-xl text-black">{{ text }}</quote>
         </div>
-        <div class="hidden desktop-sm:block col w-5/12">
+        {# <div class="hidden desktop-sm:block col w-5/12"> #}
+        <div class="col mt-10 desktop-sm:mt-0 w-full desktop-sm:w-5/12">
           <figure class="figure-p-lg">
             <img class="desaturate"{{ image|get_timber_image_responsive('portrait-50vw') }}>
           </figure>

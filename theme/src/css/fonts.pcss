@@ -38,7 +38,7 @@
 @define-mixin text-xl-sm {
   font-weight: 400;
   font-size: 30px;
-  line-height: 0.88;
+  line-height: 0.92;
   letter-spacing: -0.04em;
 }
 
@@ -61,29 +61,33 @@
 @define-mixin text-lg-lg {
   font-weight: 400;
   font-size: 25px;
-  line-height: 1.12;
-  letter-spacing: -0.016em;
+  line-height: 28px;
+  letter-spacing: -0.4px;
 }
 
 @define-mixin text-xl-lg {
   font-weight: 400;
   font-size: 45px;
-  line-height: 0.88;
-  letter-spacing: -0.04em;
+  line-height: 40px;
+  letter-spacing: -1.06px;
 }
 
 @define-mixin text-2xl-lg {
-  font-weight: 400;
+  /* font-weight: 400;
   font-size: 60px;
-  line-height: 0.85;
-  letter-spacing: -0.03em;
+  line-height: 55px;
+  letter-spacing: -1.88px; */
+  font-weight: 400;
+  font-size: 65px;
+  letter-spacing: -2.04px;
+  line-height: 51px;
 }
 
 @define-mixin text-3xl-lg {
   font-weight: 400;
   font-size: 65px;
-  line-height: 0.78;
-  letter-spacing: -0.03em;
+  letter-spacing: -2.04px;
+  line-height: 51px;
 }
 
 .text-3xl, h1 {
@@ -110,7 +114,6 @@ h1 {
   }
   .superscript {
     position: absolute;
-    /* top: 0; */
     font-size: 0.5em;
     line-height: 1;
     letter-spacing: -0.4px;
@@ -181,7 +184,7 @@ p {
   }
   
   h1 .superscript {
-    top: 4px;
+    bottom: 28px;
     font-size: 22px;
     line-height: 22px;
     letter-spacing: -0.3px;
@@ -218,13 +221,13 @@ p {
   .logo, .text-xl, h2 {
     @mixin text-xl-lg;
   }
-  
+
   .text-lg, p {
     @mixin text-lg-lg;
   }
   
   h1 .superscript {
-    top: 4px;
+    bottom: 29px;
     font-size: 22px;
     line-height: 22px;
     letter-spacing: -0.3px;
@@ -245,6 +248,14 @@ p {
       height: 15px;
       margin-top: 10px;
     }
+  }
+}
+
+@screen desktop-2lg {
+  p.footer-invite,
+  .h2-header {
+    font-size: 50px;
+    line-height: 45px;
   }
 }
 

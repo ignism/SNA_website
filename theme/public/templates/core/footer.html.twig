@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col w-10/12 desktop-sm:w-6/12 desktop-sm:mr-1/12">
             <p class="footer-invite">
-              {{ footer_widget.invitation|nl2br }}
+              {{ footer_widget.meta('invitation') }}
             </p>
           </div>
           <div class="col relative w-2/12 desktop-sm:hidden">
@@ -29,16 +29,16 @@
             </div>
             <div class="flex">
               <div class="w-8">E</div>
-              <a href="mailto:{{ footer_widget.meta('contact').email }}" class="text-white flex-grow underline">{{ footer_widget.meta('contact').email }}</a>
+              <a href="mailto:{{ footer_widget.meta('contact').email }}" class="text-white underline">{{ footer_widget.meta('contact').email }}</a>
             </div>
             <div class="flex">
               <div class="w-8">T</div>
-              <a href="tel:{{ footer_widget.meta('contact').phone }}" class="text-white flex-grow">{{ footer_widget.meta('contact').phone }}</a>
+              <a href="tel:{{ footer_widget.meta('contact').phone }}" class="text-white">{{ footer_widget.meta('contact').phone }}</a>
             </div>
             <div class="flex mt-4">
               <div class="w-8">A</div>
               <div class="flex-grow">
-                {{ footer_widget.meta('contact').address|nl2br }}
+                {{ footer_widget.meta('contact').address }}
               </div>
             </div>
           </div>
@@ -54,7 +54,7 @@
       <button class="footer-toggle dot-white">Contact us</button>
       <div class="h-6">
       <a target="_blank" href="{{ footer_widget.meta('social').twitter }}"><img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-twitter.svg" alt=""></a> 
-      <a target="_blank" href="{{ footer_widget.meta('social').facebook }}"><img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-facebook.svg" alt=""></a> 
+      {# <a target="_blank" href="{{ footer_widget.meta('social').facebook }}"><img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-facebook.svg" alt=""></a>  #}
       <a target="_blank" href="{{ footer_widget.meta('social').linkedin }}"><img class="h-full w-auto ml-4" src="{{ theme.link }}/images/icon-linkedin.svg" alt=""></a> 
       </div>
     </div>

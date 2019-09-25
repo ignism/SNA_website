@@ -10,7 +10,7 @@
       <nav class="nav pt-10 pb-2">
         <div class="row justify-between items-end">
           <div class="col">
-            <h2 class="">
+            <h2 class="h2-header">
               <a class="text-red" href="{{site.link}}">
                 <span class="logo">Suna.</span>
               </a>
@@ -76,8 +76,10 @@
     items: page.meta('case_items')
   } %}
 
-  {% include "layout/news-feed.html.twig" with {
-    items: page.meta('news_items')
-  } %}
+  {% if page.meta('news_items') %}
+    {% include "layout/news-feed.html.twig" with {
+      items: page.meta('news_items')
+    } %}
+  {% endif %}
 
 {% endblock %}
