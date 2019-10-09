@@ -1,19 +1,51 @@
-<div class="container">
-  <div class="section" style="padding-top: 0">
-    <div class="row">
-      <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
-        <figure class="figure-p-sm bg-grey">
-          <img{{ page.meta('header_images').left|get_timber_image_responsive('portrait-50vw') }} class="desaturate long scroll-saturate">
-          <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
-        </figure>
-      </div>
-      <div class="col hidden desktop-sm:block scroll-size scroll-size-right w-5/12 mt-1/12">
-        <figure class="figure-p-lg bg-grey">
-          <img class="desaturate long scroll-saturate"{{ page.meta('header_images').right|get_timber_image_responsive('square-50vw') }}>
-          <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
-        </figure>
+<div class="container relative">
+  <section class="section swiper-section {{ section_class|join(' ') }}" style="padding-top: 0">
+    <div class="swiper-container row-margins">
+
+      <div class="swiper-wrapper">
+
+        {% for slide in page.meta('header_slider') %}
+
+          <div class="swiper-slide">
+            <div class="flex">
+              <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
+                <figure class="figure-p-sm bg-grey">
+                  <img{{ slide.left|get_timber_image_responsive('portrait-50vw') }} class="desaturate long scroll-saturate">
+                </figure>
+              </div>
+              <div class="col hidden desktop-sm:block scroll-size scroll-size-right w-5/12 mt-1/12">
+                <figure class="figure-p-lg bg-grey">
+                  <img class="desaturate long scroll-saturate"{{ slide.right|get_timber_image_responsive('square-50vw') }}>
+                </figure>
+              </div>
+            </div>
+          </div>
+
+        {% endfor %}
+
       </div>
     </div>
-  </div>
+
+  </section>
+
+  <section class="section absolute pointer-events-none containered pin {{ section_class|join(' ') }}" style="padding-top: 0;">
+    <div class="row-margins">
+
+      <div class="flex">
+        <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
+          <figure class="figure-p-sm">
+            <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
+          </figure>
+        </div>
+        <div class="col hidden desktop-sm:block scroll-size scroll-size-right w-5/12 mt-1/12">
+          <figure class="figure-p-lg">
+            <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <div class="dotted-line hidden desktop-sm:block"></div>
 </div>

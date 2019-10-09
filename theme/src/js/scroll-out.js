@@ -6,12 +6,14 @@ let items = Array.from(document.querySelectorAll('.nav-item:not(.mobile)'))
 
 if (scrollOut) {
   window.addEventListener('scroll', onScroll)
+  EventBus.$once('swiped', onScroll)
 
   function onScroll(event) {
     scrollOut.classList.add('fade-out')
     setTimeout(() => {
       scrollOut.parentElement.removeChild(scrollOut)
       nav.classList.add('underline-in')
+      nav.parentElement.classList.add('transition-background')
 
       setTimeout(() => {
         let delay = 0
@@ -31,23 +33,28 @@ if (scrollOut) {
 
 //
 
-let resizers = Array.from(document.querySelectorAll('.scroll-size'))
+setTimeout(() => {
 
-if (resizers.length > 0) {
-  window.addEventListener('scroll', onScroll)
+  let resizers = Array.from(document.querySelectorAll('.scroll-size'))
 
-  function onScroll(event) {
-    resizers.forEach((resizer) => {
-      resizer.classList.add('active')
+  if (resizers.length > 0) {
+    EventBus.$once('swiped', onScroll)
 
-      setTimeout(() => {
-        resizer.style.transition = 'none'
-      }, 2000)
-    })
+    window.addEventListener('scroll', onScroll)
 
-    window.removeEventListener('scroll', onScroll)
+    function onScroll(event) {
+      resizers.forEach((resizer) => {
+        resizer.classList.add('active')
+
+        setTimeout(() => {
+          resizer.style.transition = 'none'
+        }, 2000)
+      })
+
+      window.removeEventListener('scroll', onScroll)
+    }
   }
-}
+
 
 //
 
@@ -55,6 +62,10 @@ let scrollColors = Array.from(document.querySelectorAll('.scroll-color'))
 
 scrollColors.forEach((scrollColor) => {
   EventBus.$once('scrolled', (event) => {
+    scrollColor.classList.add('active')
+  })
+
+  EventBus.$once('swiped', (event) => {
     scrollColor.classList.add('active')
   })
 })
@@ -81,4 +92,10 @@ scrollSaturates.forEach((scrollSaturate) => {
   EventBus.$once('scrolled', (event) => {
     scrollSaturate.classList.remove('desaturate')
   })
+
+  EventBus.$once('swiped', (event) => {
+    scrollSaturate.classList.remove('desaturate')
+  })
 })
+
+}, 500)

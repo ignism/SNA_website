@@ -39,11 +39,13 @@
 }
 
 .container-nav-mobile {
-  background: transparent;
   transition: background 400ms ease-out;
   .nav-items {
     bottom: 100px;
     transition: 400ms ease-out;
+  }
+  &.scrolled {
+    @apply bg-white;
   }
   &.active {
     @apply bg-red;

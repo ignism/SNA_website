@@ -18,6 +18,10 @@ $offset: 10;
   }
 }
 
+.row-margins {
+  margin: 0 -0.625rem;
+}
+
 .col {
   padding: 0 0.625rem;
   &-content {
@@ -28,5 +32,42 @@ $offset: 10;
 @screen tablet {
   .container {
     @apply px-10;
+  }
+
+  .containered {
+    left: 2.5rem;
+    right: 2.5rem;
+  }
+}
+
+@screen desktop-sm {
+  .section {
+    @apply py-10;
+    &.air-top {
+      padding-top: 100px;
+    }
+    &.air-bottom { 
+      padding-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .section {
+    &.half-top {
+      padding-top: 20px;
+    }
+    &.mobile-top-0 {
+      padding-top: 0;
+    }
+    &.mobile-bottom-0 {
+      padding-bottom: 0;
+    }
+    &.mobile-air-top {
+      padding-top: 50px;
+    }
+    &.mobile-air-bottom {
+      padding-bottom: 50px;
+    }
   }
 }

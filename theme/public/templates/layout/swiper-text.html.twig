@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="section swiper-section hidden desktop-sm:block" data-effect="fade">
+  <div class="section swiper-section hidden desktop-sm:block {{ section_class|join(' ') }}" data-effect="fade">
 
     <div class="row items-start">
       <div class="col w-7/12">
@@ -59,7 +59,7 @@
           </div>
           {% if link %}
               <a href="{{ link_url }}">
-            <div class="mt-24 text-xl text-red flex justify-end items-center">
+            <div class="mt-24 desktop-sm:mt-150px text-xl text-red flex justify-end items-center">
             <div class="cross-wrapper flex justify-end items-center">
                 <div class="mr-4">{{ link }}</div>{% include "components/cross.html.twig" %}
             </div>
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-  <div class="section expander-section block desktop-sm:hidden" data-effect="fade">
+  <div class="section half-top mobile-bottom-0 expander-section block desktop-sm:hidden" data-effect="fade">
 
     <div class="row items-start">
       <div class="col w-full">
@@ -152,6 +152,7 @@
                 {{ page.meta('usp')[3].remaining_text }}
               </p>
             </div>
+            <div class="dotted-line" style="margin-bottom: 10px"></div>
           </li>
         </ul>
       </div>

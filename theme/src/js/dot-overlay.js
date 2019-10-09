@@ -77,3 +77,14 @@ EventBus.$once('scrolled', () => {
     }, 2000)
   })
 })
+
+EventBus.$once('swiped', () => {
+  containers.forEach(container => {
+    container.classList.add('fade-out')
+    container.classList.add('long')
+
+    setTimeout(() => {
+      // container.parentElement.removeChild(container)
+    }, 2000)
+  })
+})

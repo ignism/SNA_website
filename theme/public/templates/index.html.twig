@@ -65,9 +65,12 @@
 
 {% block main %}
 
-  {% include "layout/landing.html.twig" %}
+  {% include "layout/landing.html.twig" with {
+    section_class: 'air-bottom' 
+  } %}
 
   {% include "layout/swiper-text.html.twig" with {
+    section_class: 'air-top',
     link: 'About us',
     link_url: site.link ~ '/about'
   } %}

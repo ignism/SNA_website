@@ -7,7 +7,7 @@
           <ul class="swiper-custom-pagination list-reset">
 
             {% for item in items %}
-
+           
               <li class="pagination-item trigger-hover{% if loop.index == 1 %} active{% endif %}" data-swiper-target="{{ loop.index }}" data-label-left="{{ item.post.meta('category') }}" data-label-right="{{ item.post.meta('year') }}">
                 <a href="{{ item.post.link }}">
                   <h1 class="text-2xl">{{ item.post.title }}

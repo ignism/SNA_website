@@ -11,6 +11,19 @@
   }
 }
 
+.transition-background {
+  animation: transitionBackground 400ms ease-in-out forwards;
+}
+
+@keyframes transitionBackground {
+  from {
+    background: rgba(255, 255, 255, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+
 .fade-in {
   animation: fadeIn 400ms ease-in-out forwards;
 }

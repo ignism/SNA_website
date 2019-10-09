@@ -7,7 +7,7 @@
 {% block main %}
 
   <div class="container">
-    <div class="section">
+    <div class="section mobile-air-bottom" style="padding-top: 0">
       <div class="row">
         <div class="col scroll-size scroll-size-left w-full desktop-sm:w-7/12">
           <figure class="figure-p-sm bg-grey">
@@ -24,7 +24,7 @@
             <img class="desaturate scroll-saturate"{{ page.meta('header_images').right|get_timber_image_responsive('portrait-50vw') }}>
             <div class="canvas-container z-30 absolute pin overflow-hidden"></div>
           </figure>
-          <div class="flex justify-between my-5">
+          <div class="flex justify-between mt-2">
             <div class="text-lg text-black">{{ page.meta('header_images').right_caption.left }}</div>
             <div class="text-lg text-black">{{ page.meta('header_images').right_caption.right }}</div>
           </div>

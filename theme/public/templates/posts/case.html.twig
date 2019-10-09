@@ -7,7 +7,7 @@
 {% block main %}
 
   <div class="container">
-    <div class="section">
+    <div class="section" style="padding-top: 0">
       <div class="row">
         <div class="col w-full desktop-sm:w-7/12 flex flex-col justify-between">
           <div class="w-full desktop-sm:w-11/12 desktop-xl:w-9/12">
@@ -91,10 +91,10 @@
   {% endfor %}
 
   <div class="container">
-    <div class="section hidden tablet:block">
+    <div class="section air-top hidden tablet:block">
       <div class="row justify-between">
         <div class="col">
-          <a class="flex items-end" href="{{ site.link }}/portfolio">
+          <a class="flex items-center" href="{{ site.link }}/portfolio">
             {% include "components/arrow.html.twig" with {
               direction : "left"
             } %}
@@ -104,7 +104,7 @@
           </a>
         </div>
         <div class="col">
-          <a class="flex items-end" href="{{ next_post.link }}">
+          <a class="flex items-center" href="{{ next_post.link }}">
             <div class="mr-4 text-xl text-grey">
               {{ next_post.title }}
             </div>
@@ -121,7 +121,7 @@
       <div class="row justify-between">
         <div class="col w-full">
           <a class="flex items-center justify-between" href="{{ next_post.link }}">
-            <div class="mr-4 text-xl text-grey">
+            <div class="mr-4 text-xl text-grey" style="max-width: 320px">
               {{ next_post.title }}
             </div>
             {% include "components/arrow.html.twig" with {

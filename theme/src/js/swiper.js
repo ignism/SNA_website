@@ -1,5 +1,6 @@
 import 'swiper/dist/css/swiper.css'
 import Swiper from 'swiper/dist/js/swiper.js'
+import { EventBus } from './event-bus'
 
 document.addEventListener('DOMContentLoaded', (event) => {
   let swipers = Array.from(document.getElementsByClassName('swiper-section'))
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         nextEl: swiper.querySelector('.swiper-next'),
         prevEl: swiper.querySelector('.swiper-prev')
       }
+    }).on('slideChange', function () {
+      EventBus.$emit('swiped')
     })
 
     let count = swiper.querySelector('.swiper-count')
